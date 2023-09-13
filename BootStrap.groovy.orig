@@ -1,0 +1,10 @@
+package com.oconeco
+
+class BootStrap {
+
+    def init = { servletContext ->
+        log.info "testing..."
+    }
+    def destroy = {
+    }
+}
