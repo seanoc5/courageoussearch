@@ -23,7 +23,7 @@
                     <g:if test="${flash.message}">
                         <div class="message" role="status">${flash.message}</div>
                     </g:if>
-                    <f:table collection="${searchList}" properties="query, searchResults, createdBy, searchTemplates, type, dateCreated" />
+                    <f:table collection="${searchList}" properties="query, searchResults, createdBy, type, dateCreated" />
 
                     <g:if test="${searchCount > params.int('max')}">
                     <div class="pagination">

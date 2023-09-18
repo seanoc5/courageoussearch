@@ -12,9 +12,9 @@ class Topic {
     Date lastUpdated
 
     static hasMany = [comments: Comment,
-//                      concepts: Concept,
 //                      contexts:Context,
-                      examples: ContentFragment, tags: Tag, questions: Question ]
+                      examples: ContentFragment, tags: Tag
+    ]
 
     static constraints = {
         description nullable: true

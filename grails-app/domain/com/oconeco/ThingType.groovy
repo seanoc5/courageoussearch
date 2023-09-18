@@ -2,7 +2,6 @@ package com.oconeco
 
 /**
  * Initial placeholder for defining types of "things"
- * e.g. Concept type, Topic type, Statement type,...
  * todo -- more code here as we learn more
  */
 class ThingType {

@@ -1,10 +1,9 @@
-import org.openqa.selenium.chrome.ChromeDriver
-import org.openqa.selenium.chrome.ChromeOptions
 import org.openqa.selenium.firefox.FirefoxDriver
 
 environments {
 
     // run via “./gradlew -Dgeb.env=chrome iT”
+/*
     chrome {
         driver = { new ChromeDriver() }
     }
@@ -17,6 +16,7 @@ environments {
             new ChromeDriver(o)
         }
     }
+*/
 
     // run via “./gradlew -Dgeb.env=firefox iT”
     firefox {

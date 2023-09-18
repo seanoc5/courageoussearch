@@ -22,7 +22,7 @@ abstract class TagService implements ITagService {
 
     @Transactional
     Tag save(tag){
-        log.info "Tag($tag) and contentContexts(${tag.contentContexts}"
+        log.info "Tag($tag) "
         if(tag.validate()){
             def foo = tag.save(flush:true, failOnError:true)
             log.info "Saved foo: $foo"

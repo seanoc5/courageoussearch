@@ -122,10 +122,10 @@ dataSource:
 environments:
     development:
         dataSource:
-            #            logSql: true # <<<<<<< ADD THIS <<<<<<<
+#            logSql: true # <<<<<<< ADD THIS <<<<<<<
 #            url: jdbc:h2:mem:devDb;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
-            dbCreate: create-drop
-#            dbCreate: update
+#            dbCreate: create-drop
+            dbCreate: update
             url: jdbc:h2:./devDb;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
             properties:
                 jmxEnabled: true
@@ -145,7 +145,6 @@ environments:
                 testOnReturn: false
                 jdbcInterceptors: ConnectionState
                 defaultTransactionIsolation: 2 # TRANSACTION_READ_COMMITTED
-
     test:
         dataSource:
             dbCreate: update

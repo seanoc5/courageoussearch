@@ -5,6 +5,7 @@ package com.oconeco
  */
 class Search {
     String query
+    SearchConfiguration configuration       //required
 
     String additionalParams     //    Map<String, String> additionalParams
     User createdBy
@@ -15,11 +16,9 @@ class Search {
     Date lastUpdated
 
     static hasMany = [
-            searchResults: SearchResult, searchTemplates: SearchTemplate,
-            topics       : Topic,
-//            concepts: Concept,
-            subjects: Subject,
-            tags         : Tag, comments: Comment
+            searchResults: SearchResult,
+            tags         : Tag,
+            comments     : Comment
     ]
 
     static constraints = {
@@ -36,6 +35,6 @@ class Search {
 
     @Override
     String toString() {
-        return "${query}"
+        return query
     }
 }

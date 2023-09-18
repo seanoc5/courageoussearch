@@ -26,7 +26,7 @@
                     <div class="message" role="status">${flash.message}</div>
                     </g:if>
 
-                    <f:display bean="searchResult" />
+                    <f:display bean="searchResult" order="search, type, config, statusCode, analyzers, documents"  />
 
                     <g:form resource="${this.searchResult}" method="DELETE">
                         <fieldset class="buttons">

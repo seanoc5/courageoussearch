@@ -1,6 +1,6 @@
 
-<div class="form-group ${invalid ? 'has-error' : ''}">
-    <p class="attention" title="content/description/_wrapper.gsp">_wrapper.gsp</p>
+<div class="form-group ${invalid ? 'has-error' : ''}" title="content/description/_wrapper.gsp">
+    <p class="attention" >_wrapper.gsp</p>
     <label for="${field}" class="control-label">${label} <g:if test="${required}">*</g:if></label>
 
     <div>

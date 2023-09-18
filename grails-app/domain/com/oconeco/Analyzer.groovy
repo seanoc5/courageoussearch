@@ -3,9 +3,7 @@ package com.oconeco
 /**
  * Domain object to wrap and assist with flexible post-search analysis
  * <br>
- * Can be 'run' at the (Search.SearchTemplate.SearchConfiguration.)Content level (i.e. each web doc result), <br>
- * or at the Search.SearchTemplate.SearchConfiguration level <br>
- * or at the Search.SearchTemplate or even just the Search level  (more TODO for higherr levels)
+ *
  */
 class Analyzer {
     String label

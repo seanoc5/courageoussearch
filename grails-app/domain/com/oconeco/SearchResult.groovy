@@ -3,20 +3,18 @@ package com.oconeco
 class SearchResult {
     /** actual search terms */
     String query
-    /** parent search (which might include several templates, and each template can have multiple configurations) */
+    /** parent search  */
     Search search
     /** optional search type -- typically set in returned results by source engine (and config) */
-//    ThingType type
     String type
+    String responseBody
+    Integer statusCode
 
-    /** list of search result documents */
-//    List<Content> documents = []
-    /** link back to searchTemplate  */
-    SearchTemplate template
     SearchConfiguration config
 
     List<Tag> tags = []
     List<Comment> comments = []
+    /** list of search result documents */
     List<Content> documents = []
 
 
@@ -28,11 +26,10 @@ class SearchResult {
 
     static constraints = {
         type nullable: true
-        template nullable: true
         search nullable: true
-        template nullable: true
         config nullable: true
-        documents widget: 'manyToManyWidget'
+        statusCode nullable: true
+        responseBody type:'text', nullable: true
     }
 
     @Override

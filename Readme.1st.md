@@ -1,4 +1,4 @@
-# Overview of SystemSearch
+# Overview of CourageousSearch
 
 ## Why Grails?
 Because I used it back in a time long-long ago, and I thought it would be easy to jump back in _(jury is still out on that assumption)_.
@@ -22,7 +22,7 @@ I stumbled across the `Brave` browser, and then continued blindly to discover th
 Things got more interesting for me when I found the `Goggles` beta functionality. 
 
 Two of the public Goggles are [News from the Left](https://raw.githubusercontent.com/allsides-news/brave-goggles/main/left.goggles) and [News from the Right](https://raw.githubusercontent.com/allsides-news/brave-goggles/main/right.goggles). 
-My intent with `SystemSearch` _(as opensource work)_ is to allow adventurous and technically-oriented users to have a tool that can help compare multiple "sources"
+My intent with `CourageousSearch` _(as opensource work)_ is to allow adventurous and technically-oriented users to have a tool that can help compare multiple "sources"
 in a convenience and semi-objective manner. _(More on that later)_  
 
 **Full Disclosure:** 
@@ -149,16 +149,6 @@ _displayWidget (show)
 
 
 ### Embedding templates
-More to come, but here is a start:
-
-               <f:display bean="search" property="searchTemplates"/>
-                    <g:each in="${search.searchTemplates}" var="templ" status="i">
-    %{--                        <div>${i}) Template: ${templ}</div>--}%
-    %{--                        <f:all bean="templ" />--}%
-                        <f:display property="label" bean="${templ}" />
-                        <f:display property="dateCreated" bean="${templ}" />
-                    </g:each>
-
 
 * You can customize how embedded properties are surrounded by providing a layout at grails-app/views/layouts/_fields/embedded.gsp which will override the default layout provided by the plugin.
 * When you use the f:all tag it will automatically handle embedded properties in this way.

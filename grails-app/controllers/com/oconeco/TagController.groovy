@@ -63,9 +63,9 @@ class TagController {
         }
 
 
-        List<Long> contextIds = params.list('contentContexts')?.collect { String it ->
-            it.toLong()
-        }
+//        List<Long> contextIds = params.list('contentContexts')?.collect { String it ->
+//            it.toLong()
+//        }
 //        log.info "Save($tag) contextIds($contextIds)"
 //        contextIds.each {
 //            Context context = Context.get(it)

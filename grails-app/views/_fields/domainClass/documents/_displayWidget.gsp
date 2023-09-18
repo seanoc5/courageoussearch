@@ -1,6 +1,6 @@
 <div class="attention" hidden="hidden" title="_fields/domainClass/documents/_displayWidget.gsp">LIST: _displayWidget.gsp</div>
 
-<div class="doc-list">
+<div class="doc-list" title="_fields/domainClass/documents/">
     <g:each in="${value}" var="doc" status="i">
         <div class="result">
             <div class="row doc-summary">

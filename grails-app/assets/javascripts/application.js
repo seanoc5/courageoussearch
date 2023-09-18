@@ -8,8 +8,8 @@
 //= require jquery
 //= require jquery-ui
 //= require popper.min
-//= require bootstrap.bundle.js
-//= require my-custom.js
+//= require bootstrap.bundle
+//= require appCS
 //= require_self
 
 

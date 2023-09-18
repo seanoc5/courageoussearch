@@ -19,12 +19,13 @@
 <configuration>
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
+<!--            <pattern>%d{HH:mm:ss} %-5level %logger - %msg%n</pattern>-->
             <pattern>%d{HH:mm:ss} %-5level %-20logger{0} - %msg%n</pattern>
         </encoder>
     </appender>
 
     <appender name="file" class="ch.qos.logback.core.FileAppender">
-        <file>CorpusMinder-dev.log</file>
+        <file>courageoussearch-dev.log</file>
         <append>true</append>
         <immediateFlush>true</immediateFlush>
         <encoder>
@@ -32,21 +33,23 @@
         </encoder>
     </appender>
 
+    <!-- set to debug to see where fields plugin searches for (and finds) gsp templates -->
+    <logger name="grails.plugin.formfields.FormFieldsTemplateService" level="info" />
 
-    <logger name="com.oconeco" level="info">
-        <appender-ref ref="console"/>
-    </logger>
+    <!-- quiet down messages that are a bit chatty (comment out and check the logs to see if you agree... -->
+    <logger name="grails.plugins" level="warn" />
+    <logger name="org.apache" level="warn" />
+    <logger name="org.grails" level="warn" />
+    <logger name="org.hibernate.orm.deprecation" level="error" />
+    <logger name="org.springframework" level="warn" />
+    <logger name="org.grails.config.NavigableMap" level="error"  />
+
+    <!-- keeep at info level for "my" code, assume there are errors and things to watch here -->
+    <logger name="com.oconeco" level="info" />
 
 
-    <logger name="grails.plugin.formfields.FormFieldsTemplateService" level="debug" >
-        <appender-ref ref="console"/>
-    </logger>
-
-    <logger name="org.grails.config.NavigableMap" level="error" >
-        <appender-ref ref="console"/>
-    </logger>
-
-    <root level="warn">
+    <root level="info">
         <appender-ref ref="file" />
+        <appender-ref ref="console" />
     </root>
 </configuration>

@@ -24,30 +24,10 @@ class SearchController {
             return
         }
 
+        SearchResult searchResult = searchService.execute(search)
+        log.info "Search result: $searchResult"
 
-        try {
-            if (search.searchTemplates) {
-                log.info "Search ($search) Templates:${search.searchTemplates}"
-            } else if(params.searchTemplate ){
-                SearchTemplate template = SearchTemplate.get(params.searchTemplate.toLong())
-                log.info "Found template id(${params.searchTemplate}) in request, manually adding template($template) to the search"
-                search.addToSearchTemplates(template)
-            } else {
-                List<SearchTemplate> defaultTemplates = SearchTemplate.findAllWhere(defaultTemplate: true)
-                defaultTemplates.each { SearchTemplate template ->
-                    log.info "adding default template to (empty) search: $template "
-                    search.addToSearchTemplates(template)
-                }
-            }
-
-            searchService.execute(search)
-//            searchService.save(search)
-
-        } catch (ValidationException e) {
-            log.warn "Validation error: $e"
-            respond search.errors, view: 'create'
-            return
-        }
+        session.lastSearch = search
 
         request.withFormat {
             form multipartForm {
@@ -59,6 +39,7 @@ class SearchController {
     }
 
     def browse(Long id) {
+        log.info "Lasts Search: ${session.lastSearch} from session...?"
         def search = searchService.browse(id)
         respond search
     }

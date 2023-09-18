@@ -15,116 +15,124 @@
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-light">
-    %{--    <a class="navbar-brand" href="/#"><asset:image src="oconeco_logo.jpg" alt="OconEco Logo"/></a>--}%
-    <g:link controller="system" action="dashboard" class="navbar-brand"><asset:image src="oconeco_logo.jpg" alt="OconEco Logo"/></g:link>
 
+<nav class="navbar navbar-expand-lg">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="/#">Home <span class="sr-only">(Home link)</span></a>
-            </li>
+    %{--    <nav class="navbar navbar-expand-lg navbar-light bg-light">--}%
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/#"><asset:image src="oconeco_logo.jpg" alt="OconEco Logo"/></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-search" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Search related...
-                </a>
+        %{--https://getbootstrap.com/docs/5.0/components/navbar/--}%
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown-search">
-                    <g:link controller="search" class="dropdown-item">Search</g:link>
-                    <g:link controller="searchResult" class="dropdown-item">Search Results</g:link>
-                    <div class="dropdown-divider"></div>
-                    <g:link controller="searchTemplate" class="dropdown-item">Search Templates</g:link>
-                    <g:link controller="searchConfiguration" class="dropdown-item">Search Configurations</g:link>
-                </div>
-            </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                </li>
 
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-structure" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Structure related...
-                </a>
+                <!-- SEARCH -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-search" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Search Related
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown-search">
+                        <li><g:link controller="search" class="dropdown-item">Search</g:link></li>
+                        <li><g:link controller="searchResult" class="dropdown-item">Search Results</g:link></li>
 
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown-structure">
-                    <g:link controller="subject" class="nav-link">Subjects</g:link>
-                    <g:link controller="topic" class="nav-link">Topics</g:link>
-                    <g:link controller="concept" class="nav-link">Concepts</g:link>
-                    <g:link controller="context" class="nav-link">Contexts</g:link>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-content" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Content related...
-                </a>
+                        <div class="dropdown-divider"></div>
+                        <li><g:link controller="searchConfiguration" class="dropdown-item">Search Configurations</g:link></li>
+                    </ul>
+                </li>
 
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown-structure">
-                    <g:link controller="content" class="nav-link">Content/Documents</g:link>
-                    <g:link controller="contentFragment" class="nav-link">ContentFragments</g:link>
-                </div>
-            </li>
+                <!-- STRUCTURE -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-structure" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Structure Related
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown-search">
+                        <li><g:link controller="subject" class="dropdown-item">Subjects</g:link></li>
 
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-interaction" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Interactions...
-                </a>
+                        <div class="dropdown-divider"></div>
+                        <li><g:link controller="context" class="dropdown-item">Contexts</g:link></li>
+                    </ul>
+                </li>
 
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown-interaction">
-                    <g:link controller="question" class="nav-link">Questions</g:link>
-                    <g:link controller="answer" class="nav-link">Answers</g:link>
-                    <g:link controller="statement" class="nav-link">Statements</g:link>
-                    <div class="dropdown-divider"></div>
-                    <g:link controller="tag" class="nav-link">Tags</g:link>
-                    <g:link controller="comment" class="nav-link">Comments</g:link>
-                </div>
-            </li>
+                <!-- CONTENT -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-content" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Content Related
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown-content">
+                        <li><g:link controller="content" class="dropdown-item">Content/Docs</g:link></li>
+                        <li><g:link controller="contentFragment" class="dropdown-item">Content Fragments</g:link></li>
+                    </ul>
+                </li>
 
+                <!-- INTERACTIONS -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-interactions" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Interactions Related
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown-content">
+                        <li><g:link controller="tag" class="dropdown-item">Tags</g:link></li>
+                        <li><g:link controller="comment" class="dropdown-item">Comments</g:link></li>
+                    </ul>
+                </li>
 
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-system" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    System
-                </a>
+                <!-- SYSTEMM -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-system" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        System Related
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown-content">
+                        <li><g:link controller="system" action="setup" class="nav-link" title="Development hack to get demo/starter domain objects to work with.">Dev Setup</g:link></li>
+                        <li><g:link controller="system" class="dropdown-item"></g:link></li>
+                        <li><div class="dropdown-divider" /></li>
+                        <li><g:link controller="system" class="nav-link" title="Overview/dashboard.">Overview/dashboard</g:link></li>
+                        <li><g:link controller="system" action="grails" class="nav-link" title="Grails details and backend information">Grails Information</g:link></li>
+                        <li><g:link controller="user" class="nav-link" title="">Users</g:link></li>
+                        <li><g:link controller="organization" class="nav-link" title="">Organizations</g:link></li>
+                        <li><div class="dropdown-divider" /></li>
+                        <li><g:link controller="analyzer" class="nav-link" title="">Analyzers</g:link></li>
+                    </ul>
+                </li>
 
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown-system">
-                    <g:link controller="system" action="setup" class="nav-link" title="Development hack to get demo/starter domain objects to work with.">Dev Setup</g:link>
-                    <div class="dropdown-divider"></div>
+            </ul>
+        </li>
 
-                    <g:link controller="system" class="nav-link" title="Overview/dashboard.">Overview/dashboard</g:link>
-                    <g:link url="/grails" class="nav-link" title="Grails details and backend information">Grails Information</g:link>
-                    <div class="dropdown-divider"></div>
-
-                    <g:link controller="user" class="nav-link" title="">Users</g:link>
-                    <g:link controller="organization" class="nav-link" title="">Organizations</g:link>
-                    <div class="dropdown-divider"></div>
-                    <g:link controller="analyzer" class="nav-link" title="">Analyzers</g:link>
-                </div>
-            </li>
         </ul>
 
+        </div>
     </div>
 </nav>
 
-<div class="container-fluid">
-    <g:form action="save" controller="search" class="form-inline my-2 my-lg-0">
-        <div class="row">
-            <input id="search-global" class="form-control mr-sm-2 col-sm-9" type="search" name="query" placeholder="query text" value="current news">
-            <button class="btn btn-outline-success my-2 my-sm-0 col-sm-3" type="submit">Search</button>
+
+<div class="container-fluid" >
+    <g:form action="save" controller="search" class="">
+        <div class="row input-group">
+            <input id="contexts-global" class="col-3 my-1 me-sm-2 " type="search" name="contexts-select" placeholder="pick a context" aria-label="Context" />
+            <input id="context-global-id" class="col-1" type="hidden" name="context" />
+            <label for="contexts-global" class="col-1 my-1 me-2">Context</label>
+        </div>
+
+        <div class="row input-group">
+            <input id="search-config-global" class="col-3 my-1 me-sm-2" type="search" name="search-config-select" placeholder="pick a search config" aria-label="Search Configuration" />
+            <input id="search-config-global-id" class="" type="hidden" name="configuration" />
+            <label for="search-config-global" class="col-1 my-1 me-2">Search Config</label>
         </div>
 
         <div class="row">
-            <label for="contexts-global" class="col-sm-3">Context:</label>
-            <input id="contexts-global" class="form-control mr-sm-2 col-sm-9" type="search" name="contexts-select" placeholder="pick a context" aria-label="Context" %{--value="Current US Politics"--}%>
-            <input id="context-global-id" type="hidden" name="context" %{--value="3"--}%/>
+            <input id="search-global" class="form-control mr-sm-2 col-3" type="search" name="query" placeholder="query text">
+            <button class="btn btn-outline-success my-2 my-sm-0 col-1" type="submit">Search</button>
         </div>
 
-        <div class="row">
-            <label for="template-global" class="col-3">Search Template:</label>
-            <input id="templates-global" class="form-control mr-sm-2 col-9" type="search" name="templates-select" placeholder="pick a search template" aria-label="Search Templates" %{--value="News from the Left and Right"--}%>
-            <input id="template-global-id" type="hidden" name="searchTemplate" aria-label="SearchTemplate ID" %{--value="3"--}%/>
-        </div>
     </g:form>
 </div>
 
@@ -153,7 +161,9 @@
 
 <script>
     $(document).ready(function () {
+
         // $("#search-global").autofocus(
+
         $("#contexts-global").autocomplete({
             source: "${createLink(controller: 'context', action: 'autoComplete')}",
             minLength: 1,
@@ -171,20 +181,22 @@
             }
         });
 
-        $("#templates-global").autocomplete({
-            source: "${createLink(controller: 'searchTemplate', action: 'autoComplete')}",
+
+        $("#search-config-global").autocomplete({
+            source: "${createLink(controller: 'searchConfiguration', action: 'autoComplete')}",
             minLength: 1,
             response: function (event, ui) {
-                console.info(event);
+                console.info(ui);
             },
             select: function (event, ui) {
                 let selectedLabel = ui.item.label;
                 let selectedValue = ui.item.id;
-                $("#template-global-id").val(selectedValue);
+                $("#search-config-global-id").val(selectedValue);
 
                 console.log("Search Template Selected Label/value: " + selectedLabel + "/" + selectedValue);
             }
         });
+
     });
 </script>
 </body>

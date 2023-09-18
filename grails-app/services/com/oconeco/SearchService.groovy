@@ -5,6 +5,7 @@ import groovy.json.JsonSlurper
 import org.jsoup.Jsoup
 import org.jsoup.safety.Safelist
 
+import java.net.http.HttpResponse
 import java.time.Instant
 import java.time.LocalDate
 import java.time.ZoneId
@@ -42,32 +43,32 @@ abstract class SearchService implements ISearchService {
         return search
     }
 
-    Search execute(Search search) {
-        log.info "\t\texecute search: '${search}' "
+    SearchResult execute(Search search) {
+        log.info "\t\texecute search: '${search}'"
         if (search.query.size() > 1) {
             log.debug "basic sanity check on search.query passes..."
-        } else if (search.searchTemplates.size() == 0) {
-            // todo better checking here, send back visual
-            log.warn "No valid search template, bailing out... "
-            return search
         } else {
             log.warn "basic sanity check on search.query(${search.query}) fails..."
             return search
         }
 
-        // todo -- fixme...? had trouble getting searchResult documents to save, this save() is a hacked solution...
+//        // todo -- fixme...? had trouble getting searchResult documents to save, this save() is a hacked solution...
         search.save()
 
-        search?.searchTemplates?.each { SearchTemplate template ->
-            // todo -- what else should a template have? Default HttpClient??  Default Params? Default
+        SearchResult searchResult = null
+        SearchConfiguration config = null
+        if (search.configuration) {
+            config = search.configuration
+        } else {
+            config = SearchConfiguration.findByDefaultConfig(true)
+            search.configuration = config
+        }
 
-            log.info "\t\t\ttemplate: $template"
-            template.searchConfigs.each { SearchConfiguration config ->
-                log.debug "\t\t\t\tsearchConfiguration: $config"
-
-                def response = config.doSearch(search)
-                log.debug "\t\tResponse: $response"
-                SearchResult searchResult = buildResult(search, response, config, template)
+        HttpResponse<String> response = config.doSearch(search)
+        log.debug "\t\tResponse: $response"
+        if (response) {
+            if (response.statusCode() == 200) {
+                searchResult = buildResult(search, response, config)
                 if (searchResult.validate()) {
                     def foo = searchResultService.save(searchResult)
                     search.addToSearchResults(searchResult)
@@ -75,22 +76,36 @@ abstract class SearchService implements ISearchService {
                 } else {
                     log.warn "Search result($searchResult) is not valid: ${searchResult.errors}"
                 }
-            }
 
-            log.debug "\t\tDone with template: $template"
-        }
 
-        if (search.validate()) {
-            try {
-                def bar = search.save()         // todo -- revisit, and see if this is resonable to save() here...?
-                log.info "Saved search ($search) with results: ${search.searchResults}"
-            } catch (Exception e) {
-                log.error "Exception on search.save(): $e"
+                if (search.validate()) {
+                    try {
+                        def bar = search.save()         // todo -- revisit, and see if this is resonable to save() here...?
+                        log.info "Saved search ($search) with results: ${search.searchResults}"
+                    } catch (Exception e) {
+                        log.error "Exception on search.save(): $e"
+                    }
+                } else {
+                    log.warn "Validation errors: ${search.errors}"
+                }
+            } else {
+                String rspStr = response.body()
+                int scode = response.statusCode()
+                searchResult = new SearchResult(query: search.query, search: search, response: rspStr, config: config, type: "Error: ${scode}", statusCode: scode)
+                        .save()
+                search.addToSearchResults(searchResult)
+                String msg = "Did not get the expected status code of 200, we got:(${response.statusCode()}) for search ($search) -- response: $response"
+                log.warn msg
+                if (search.validate()) {
+                    search.save()       // todo -- show error message, add link to search config if it is missing the right token (brave search?)
+                } else {
+                    log.warn "Error(s) saving search:($search) -- ${search.errors}"
+                }
             }
         } else {
-            log.warn "Validation errors: ${search.errors}"
+            log.warn "NO response from search($search)... something out of sync??"
         }
-        return search
+        return searchResult
     }
 
 
@@ -103,13 +118,16 @@ abstract class SearchService implements ISearchService {
      * todo - make this more general, and handle other types
      * todo - move this to a more portable location/implementation
      */
-    SearchResult buildResult(Search search, def response, SearchConfiguration config, SearchTemplate template) {
+    SearchResult buildResult(Search search, HttpResponse response, SearchConfiguration config) {
         JsonSlurper slurper = new JsonSlurper()
         String body = response.body()
         def json = slurper.parseText(body)
         String query = json.query?.original
         String type = json.type
-        SearchResult searchResult = new SearchResult(query: query, type: type, search: search, config: config, template: template)
+        int scode = response.statusCode()
+        log.info "Search status: ${search.isDirty()}"
+        SearchResult searchResult = new SearchResult(query: query, type: type, search: search, config: config, responseBody: body, statusCode: scode )
+
         def webResults = json.web.results
         webResults.each {
             String safeDesc = Jsoup.clean(it.description, Safelist.basic())
@@ -146,21 +164,10 @@ abstract class SearchService implements ISearchService {
                 log.warn "webdoc($webdoc) does not validate. errors: ${webdoc.errors}"
             }
         }
-        Content contentTest = Content.first()
 
         if (searchResult.validate()) {
-            log.debug "\t\tSearch result (parent) template: ${searchResult.template} && config: ${searchResult.config}"
-/*
-            try {
-            // todo -- review this, probably should not try to save, since this belongs to Search, and that save will cascade... ???
-//                def foo = searchResult.save()
-//                log.debug "Saved search result: $searchResult"
-            } catch (PropertyValueException pve) {
-                log.warn "Problem saving: $pve"
-            } catch (Exception e){
-                log.warn "Unknown exception: $e"
-            }
-*/
+            // leaving save of this searchResult to 'parent' search.save() (from caller???)
+            log.debug "\t\tSearch result (parent) Search: ${search} && config: ${searchResult.config}"
         } else {
             log.warn "Search result ($searchResult) validation errors: ${searchResult.errors}"
         }
@@ -172,9 +179,9 @@ abstract class SearchService implements ISearchService {
      * @param fullHost
      * @return simplified host name
      */
-    String simplifyHost(String fullHost){
+    String simplifyHost(String fullHost) {
         String s = null
-        if(fullHost.startsWith('www')){
+        if (fullHost.startsWith('www')) {
             s = fullHost[4..-1]
             log.debug "\t\tsimplify host($fullHost) to simpler($s)"
         } else {

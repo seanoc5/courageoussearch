@@ -122,13 +122,6 @@ _displayWidget (show)
 ## Embedding templates
 More to come, but here is a start:
 
-               <f:display bean="search" property="searchTemplates"/>
-                    <g:each in="${search.searchTemplates}" var="templ" status="i">
-    %{--                        <div>${i}) Template: ${templ}</div>--}%
-    %{--                        <f:all bean="templ" />--}%
-                        <f:display property="label" bean="${templ}" />
-                        <f:display property="dateCreated" bean="${templ}" />
-                    </g:each>
 
 
 * You can customize how embedded properties are surrounded by providing a layout at grails-app/views/layouts/_fields/embedded.gsp which will override the default layout provided by the plugin.

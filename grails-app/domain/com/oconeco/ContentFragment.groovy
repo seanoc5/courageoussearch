@@ -5,8 +5,6 @@ class ContentFragment {
     String text
     String description
     String structuredContent
-//    String uri
-//    String path
     long startPos
     long endPos
     long startTermNum
@@ -19,11 +17,8 @@ class ContentFragment {
     Date lastUpdated
 
     static belongsTo = [document: Content]
-    static hasMany = [
-//            concepts:Concept,
-            topics:Topic,
-//            vocaulary:Vocabulary
-    ]
+    static hasMany = [tags:Tag, comments:Comment]
+
     static constraints = {
         text nullable: true, type:'text'
         description  nullable: true, type: 'text'

@@ -28,10 +28,6 @@ class SearchConfiguration {
     String paramsJson
     String headersJson
 
-//    List<Concept> concepts = []
-//    List<Tag> tags = []
-//    List<Comment> comments = []
-
     Date dateCreated
     Date lastUpdated
 
@@ -40,8 +36,8 @@ class SearchConfiguration {
     static constraints = {
         description nullable: true
         url nullable: true
-        headersJson nullable: true
-        paramsJson nullable: true
+        headersJson type:'text', nullable: true, widget: 'textarea'
+        paramsJson type:'text', nullable: true, widget: 'textarea'
         createdBy nullable: true
     }
 

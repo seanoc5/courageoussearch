@@ -7,16 +7,16 @@ class ContextController {
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
     static scaffold = Context
 
-    def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        log.info "index contentContexts..."
-        respond conceptService.list(params), model:[conceptCount: conceptService.count()]
-    }
+//    def index(Integer max) {
+//        params.max = Math.min(max ?: 10, 100)
+//        log.info "index contentContexts..."
+//        respond conceptService.list(params), model:[conceptCount: conceptService.count()]
+//    }
 
 
     def autoComplete() {
         List<Context> contexts = Context.findAllByLabelIlike("%${params.term}%")
-        log.info "ContextController autocomplete, params: $params, results: ${contexts*.label}"
+        log.debug "ContextController autocomplete, params: $params, results: ${contexts*.label}"
         respond contexts, model: [contextCount: contextService.count()]
     }
 

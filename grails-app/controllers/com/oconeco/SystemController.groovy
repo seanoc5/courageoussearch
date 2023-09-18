@@ -4,6 +4,7 @@ class SystemController {
     SystemService systemService
 
     def setup(){
+        log.info "setup database with sample objects..."
         def foo = systemService.setupObjects()
         redirect(action: 'dashboard')
     }

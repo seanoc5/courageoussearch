@@ -12,14 +12,14 @@ class Context {
     String location
     String intent
 
+    boolean defaultContext = false
+
     User createdBy
 
     Date dateCreated
     Date lastUpdated
 
     static hasMany = [
-            subjects: Subject, topics: Topic,
-//            concepts: Concept,
             analyzers: Analyzer,
             tags: Tag,
             examples: ContentFragment,

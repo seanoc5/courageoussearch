@@ -8,91 +8,20 @@
 * compiled file, but it's generally better to create a new file per style scope.
 *
 *= require bootstrap
+*= require bootstrap-grid.min
+*= require bootstrap-reboot.min
+*= require bootstrap-utilities.min
+
 *= require grails
 *= require main
 *= require mobile
-*= require my-grid
+
 *= require jquery-ui
 *= require jquery-ui.structure
 *= require jquery-ui.theme
+
+*= require appCS
+
 *= require_self
 */
 
-.attention {
-    color: red;
-    font-weight: bold;
-    font-size: 15px;
-}
-
-div.doc-list {
-    border: gray solid 1px;
-}
-
-div.result {
-    margin-bottom: 2rem;
-}
-
-div.foo strong {
-    font-weight: bold;
-    color: darkblue;
-}
-
-div.doc-list {
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-    overflow: auto;
-    -ms-overflow-style: scrollbar;
-}
-
-.container-fluid {
-    /*border: 1px solid #cfc;*/
-    width: 95%;
-}
-
-section#search-data fieldset {
-    margin: 0;
-    padding: 0;
-}
-
-section#search-data fieldset {
-    margin: 0;
-    padding: 0;
-}
-
-fieldset,
-.property-list {
-    margin: 0.1em;
-    padding: 0.1em;
-    /*position: relative;*/
-    /*zoom: 1;*/
-    /*border:  1px solid #ccf;*/
-}
-
-span.property-label {
-    color: #888;
-    text-align: right;
-}
-
-div#results-header {
-    text-align: center;
-}
-
-#searchlabel {
-    /*text-align: center;*/
-    color: blue;
-    /*display:block;*/
-    /*margin: auto;*/
-    /*flex-grow: 1;*/
-    width: 90%;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.card {
-    margin: 0.4em;
-}
-
-
-/*div#content {*/
-/*    background-color: #eee;*/
-/*}*/

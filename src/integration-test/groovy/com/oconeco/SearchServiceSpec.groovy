@@ -32,10 +32,7 @@ class SearchServiceSpec extends Specification {
         Map hdrs = ["Accept": "application/json", "X-Subscription-Token": "BSAUlGxLKl1TEnzyzhH755sBpllHQIw"]
         JsonSlurper slurper = new JsonSlurper()
         SearchConfiguration config = new SearchConfiguration(label: "spock brave config", url: "https://api.search.brave.com/res/v1/web/search", headers: hdrs ).save(failOnError: true)
-        SearchTemplate template = new SearchTemplate(label: "spock brave template").save(failOnError: true)
-        template.addToSearchConfigs(config)
         Search search = new Search(query: "grails best practices 2023")
-        search.addToSearchTemplates(template)
         search.save()
 
         when:

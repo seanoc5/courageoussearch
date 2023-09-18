@@ -9,7 +9,8 @@ class Tag {
     Date dateCreated
     Date lastUpdated
 
-    static hasMany = [comments:Comment
+    static hasMany = [
+            comments:Comment
     ]
 
     static constraints = {

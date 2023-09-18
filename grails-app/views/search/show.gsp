@@ -28,7 +28,7 @@
 
         <div class="row">
             <div id="show-search" class="col-12 content scaffold-show" role="main">
-                <h1><g:message code="default.browse.label" args="[entityName]"/></h1>
+                <h1><g:message message="Browse" args="[entityName]"/></h1>
                 <g:if test="${flash.message}">
                     <div class="message" role="status">${flash.message}</div>
                 </g:if>
@@ -37,13 +37,14 @@
 
         <div id="search-data">
 
-            <f:display bean="search" order="query, searchTemplates, context, tags, createdBy"/>
+            <f:display bean="search" order="query, context, tags"/>
 
             <div class="row">
                 <g:each in="${search.searchResults}" var="result" status="i">
                     <div class="col-lg-6 border-success">
-                        Show Result: <g:link controller="searchResult" action="show" id="${search.searchResults[i].id}" >${search.searchResults[i]}</g:link>
-
+                        Show Result:
+                        <g:link controller="searchResult" action="show" id="${search.searchResults[i].id}" >${search.searchResults[i]}</g:link>
+                        <div class="attention">Config & Docs</div>
                         <f:display bean="${search.searchResults[i]}" order="config, documents"/>
                     </div>
                 </g:each>
