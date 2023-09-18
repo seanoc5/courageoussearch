@@ -1,4 +1,4 @@
-<%@ page import="com.oconeco.Context; com.oconeco.ContentContext; com.oconeco.ContextContext; com.oconeco.Subject" %>
+<%@ page import="com.oconeco.Topic; com.oconeco.Search; com.oconeco.SearchTemplate; com.oconeco.SearchConfiguration; com.oconeco.SearchResult; com.oconeco.Analyzer; com.oconeco.Question; com.oconeco.Answer; com.oconeco.Context; com.oconeco.Subject" %>
 <!doctype html>
 <html>
 <head>
@@ -10,13 +10,13 @@
 <div id="content" role="main">
     <div class="container-fluid" id="summary-section">
         <section class="row content-structure">
-            <div class="card summary" class="col-lg-3 mb-4">
+            <div class="card summary col-lg-3 mb-4">
                 <div class="card-body">
                     <span><asset:image src="subjects.svg" alt="Subjects Panel" class="icon"/></span>
                     <span class="card-title">Subjects</span>
-                    <span class="card-text">(${com.oconeco.Subject.count()})</span>
+                    <span class="card-text">(${Subject.count()})</span>
                     <ul>
-                        <g:each in="${com.oconeco.Subject.list(max: 15)}" status="i" var="it">
+                        <g:each in="${Subject.list(max: 15)}" status="i" var="it">
                             <li>
                                 <g:link controller="subject" action="show" id="${it.id}"
                                         title="${i + 1}: ${it.description ?: 'no description'}">${it.label}</g:link>
@@ -27,13 +27,13 @@
                 </div>
             </div>
 
-            <div class="card summary" class="col-lg-3 mb-4">
+            <div class="card summary col-lg-3 mb-4">
                 <div class="card-body">
                     <span><asset:image src="topics.svg" alt="Topics Panel" class="icon"/></span>
                     <span class="card-title">Topics</span>
-                    <span class="card-text">(${com.oconeco.Topic.count()})</span>
+                    <span class="card-text">(${Topic.count()})</span>
                     <ul>
-                        <g:each in="${com.oconeco.Topic.list(max: 15)}" status="i" var="it">
+                        <g:each in="${Topic.list(max: 15)}" status="i" var="it">
                             <li>
                                 <g:link controller="topic" action="show" id="${it.id}"
                                         title="${i + 1}: ${it.description ?: 'no description'}">${it.label}</g:link>
@@ -44,7 +44,7 @@
                 </div>
             </div>
 
-            <div class="card summary" class="col-lg-3 mb-4">
+            <div class="card summary col-lg-3 mb-4">
                 <div class="card-body">
                     <span><asset:image src="concepts.svg" alt="Concepts Panel" class="icon"/></span>
                     <span class="card-title">Concepts</span>
@@ -64,13 +64,13 @@
         </section>
 
         <section class="row searching" id="search-section">
-            <div class="card summary" class="col-lg-3 mb-4">
+            <div class="card summary col-lg-3 mb-4">
                 <div class="card-body">
                     <span><asset:image src="search.png" alt="Searches" class="icon"/></span>
                     <span class="card-title">Searches</span>
-                    <span class="card-text">(${com.oconeco.Search.count()})</span>
+                    <span class="card-text">(${Search.count()})</span>
                     <ul>
-                        <g:each in="${com.oconeco.Search.list(max: 15)}" status="i" var="it">
+                        <g:each in="${Search.list(max: 15)}" status="i" var="it">
                             <li>
                                 <g:link controller="search" action="show" id="${it.id}"
                                         title="${i + 1}: ${it.searchTemplates.size()} templates">${it.query}</g:link>
@@ -81,13 +81,13 @@
                 </div>
             </div>
 
-            <div class="card summary" class="col-lg-3 mb-4">
+            <div class="card summary col-lg-3 mb-4">
                 <div class="card-body">
                     <span><asset:image src="template24.png" alt="Search Templates" class="icon"/></span>
                     <span class="card-title">Search Templates</span>
-                    <span class="card-text">(${com.oconeco.SearchTemplate.count()})</span>
+                    <span class="card-text">(${SearchTemplate.count()})</span>
                     <ul>
-                        <g:each in="${com.oconeco.SearchTemplate.list(max: 15)}" status="i" var="it">
+                        <g:each in="${SearchTemplate.list(max: 15)}" status="i" var="it">
                             <li>
                                 <g:link controller="searchTemplate" action="show" id="${it.id}"
                                         title="${i + 1}: ${it.description ?: 'no description'}">${it.toString()}</g:link>
@@ -98,13 +98,13 @@
                 </div>
             </div>
 
-            <div class="card summary" class="col-lg-3 mb-4">
+            <div class="card summary col-lg-3 mb-4">
                 <div class="card-body">
                     <span><asset:image src="configure24.svg" alt="Search Configs Panel" class="icon"/></span>
                     <span class="card-title">Search Configs</span>
-                    <span class="card-text">(${com.oconeco.SearchConfiguration.count()})</span>
+                    <span class="card-text">(${SearchConfiguration.count()})</span>
                     <ul>
-                        <g:each in="${com.oconeco.SearchConfiguration.list(max: 15)}" status="i" var="it">
+                        <g:each in="${SearchConfiguration.list(max: 15)}" status="i" var="it">
                             <li>
                                 <g:link controller="searchConfiguration" action="show" id="${it.id}"
                                         title="${i + 1}: ${it.description ?: 'no description'}">${it.label}</g:link>
@@ -115,13 +115,13 @@
                 </div>
             </div>
 
-            <div class="card summary" class="col-lg-3 mb-4">
+            <div class="card summary col-lg-3 mb-4">
                 <div class="card-body">
                     <span><asset:image src="refresh-light.svg" alt="Search Results" class="icon"/></span>
                     <span class="card-title">Search Results</span>
-                    <span class="card-text">(${com.oconeco.SearchResult.count()})</span>
+                    <span class="card-text">(${SearchResult.count()})</span>
                     <ul>
-                        <g:each in="${com.oconeco.SearchResult.list(max: 15)}" status="i" var="it">
+                        <g:each in="${SearchResult.list(max: 15)}" status="i" var="it">
                             <li>
                                 <g:link controller="searchResult" action="show" id="${it.id}"
                                         title="${i + 1}: ${it.query ?: 'no query??'}">${it.query}</g:link>
@@ -134,13 +134,13 @@
         </section>
 
         <section class="row processing" id="processing-section">
-            <div class="card summary" class="col-lg-3 mb-4">
+            <div class="card summary col-lg-3 mb-4">
                 <div class="card-body">
                     <span><asset:image src="context24.svg" alt="Context Panel" class="icon"/></span>
                     <span class="card-title">Contexts</span>
-                    <span class="card-text">(${com.oconeco.Context.count()})</span>
+                    <span class="card-text">(${Context.count()})</span>
                     <ul>
-                        <g:each in="${com.oconeco.Context.list(max: 15)}" status="i" var="it">
+                        <g:each in="${Context.list(max: 15)}" status="i" var="it">
                             <li>
                                 <g:link controller="context" action="show" id="${it.id}"
                                         title="${i + 1}: ${it.description ?: 'no description'}">${it.label}</g:link>
@@ -151,13 +151,13 @@
                 </div>
             </div>
 
-            <div class="card summary" class="col-lg-3 mb-4">
+            <div class="card summary col-lg-3 mb-4">
                 <div class="card-body">
                     <span><asset:image src="analyzer.svg" alt="Analyzer Results" class="icon"/></span>
                     <span class="card-title">Analyzers</span>
-                    <span class="card-text">(${com.oconeco.Analyzer.count()})</span>
+                    <span class="card-text">(${Analyzer.count()})</span>
                     <ul>
-                        <g:each in="${com.oconeco.Analyzer.list(max: 15)}" status="i" var="it">
+                        <g:each in="${Analyzer.list(max: 15)}" status="i" var="it">
                             <li>
                                 <g:link controller="analyzer" action="show" id="${it.id}"
                                         title="${i + 1}: ${it.label ?: 'no text??'}">${it.label}</g:link>
@@ -168,7 +168,7 @@
                 </div>
             </div>
 
-            <div class="card summary" class="col-lg-3 mb-4">
+            <div class="card summary col-lg-3 mb-4">
                 <div class="card-body">
                     <span><asset:image src="slack.svg" alt="Vocabulary" class="icon"/></span>
                     <span class="card-title">Vocabulary</span>
@@ -185,7 +185,7 @@
                 </div>
             </div>
 
-            <div class="card summary" class="col-lg-3 mb-4">
+            <div class="card summary col-lg-3 mb-4">
                 <div class="card-body">
                     <span><asset:image src="slack.svg" alt="Term" class="icon"/></span>
                     <span class="card-title">Term</span>
@@ -205,13 +205,13 @@
 
 
         <section class="row">
-            <div class="card summary" class="col-lg-3 mb-4">
+            <div class="card summary col-lg-3 mb-4">
                 <div class="card-body">
                     <span><asset:image src="question.svg" alt="Questions" class="icon"/></span>
                     <span class="card-title">Questions</span>
-                    <span class="card-text">(${com.oconeco.Question.count()})</span>
+                    <span class="card-text">(${Question.count()})</span>
                     <ul>
-                        <g:each in="${com.oconeco.Question.list(max: 15)}" status="i" var="it">
+                        <g:each in="${Question.list(max: 15)}" status="i" var="it">
                             <li>
                                 <g:link controller="question" action="show" id="${it.id}"
                                         title="${i + 1}: ${it.topic ?: 'unknown topic'}">${it.text}</g:link>
@@ -223,13 +223,13 @@
             </div>
 
 
-            <div class="card summary" class="col-lg-3 mb-4">
+            <div class="card summary col-lg-3 mb-4">
                 <div class="card-body">
                     <span><asset:image src="answer.svg" alt="Answers" class="icon"/></span>
                     <span class="card-title">Answers</span>
-                    <span class="card-text">(${com.oconeco.Answer.count()})</span>
+                    <span class="card-text">(${Answer.count()})</span>
                     <ul>
-                        <g:each in="${com.oconeco.Answer.list(max: 15)}" status="i" var="it">
+                        <g:each in="${Answer.list(max: 15)}" status="i" var="it">
                             <li>
                                 <g:link controller="answer" action="show" id="${it.id}" title="${i + 1}: ${it.description ?: 'no description'}">${it.label}</g:link>
                             </li>
@@ -239,7 +239,7 @@
                 </div>
             </div>
 
-            <div class="card summary" class="col-lg-3 mb-4">
+            <div class="card summary col-lg-3 mb-4">
                 <div class="card-body">
                     <span><asset:image src="statement.svg" alt="Statements" class="icon"/></span>
                     <span class="card-title">Statements</span>
