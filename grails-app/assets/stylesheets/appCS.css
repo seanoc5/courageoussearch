@@ -1,0 +1,125 @@
+/*https://www.geeksforgeeks.org/how-to-make-menu-dropdown-on-hover-using-bootstrap/*/
+.dropdown:hover .dropdown-menu {
+      display: block;
+}
+
+.navbar-nav > li > a {
+    color: darkgreen;
+}
+
+
+.searchResult {
+    border: #6f42c1 1px solid;
+}
+
+div.content.title {
+    font-weight: bold;
+    color:darkgoldenrod;
+    border-bottom: 1px solid black;
+}
+
+div.source {
+    white-space: nowrap;
+    padding-bottom: 5px;
+    overflow: auto;
+    overflow-clip-margin: 8px;
+    /*border: 1px solid darkgoldenrod;*/
+}
+
+.attention {
+    color: red;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+span.bodyText, span.structuredContent {
+    color: lightcoral;
+}
+
+.structuredContent {
+    height: 50rem;
+    overflow: scroll;
+    border: 1px solid orange;
+}
+
+
+.bodyText {
+    white-space: pre-wrap;
+    display: block;
+    height: 30rem;
+    overflow: scroll;
+    border: 1px solid green;
+}
+
+div.doc-list {
+    border: gray solid 1px;
+}
+
+div.result {
+    margin-bottom: 2rem;
+}
+
+div.foo strong {
+    font-weight: bold;
+    color: darkblue;
+}
+
+div.doc-list {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    overflow: auto;
+    -ms-overflow-style: scrollbar;
+}
+
+.container-fluid {
+    /*border: 1px solid #cfc;*/
+    width: 95%;
+}
+
+section#search-data fieldset {
+    margin: 0;
+    padding: 0;
+}
+
+section#search-data fieldset {
+    margin: 0;
+    padding: 0;
+}
+
+fieldset,
+.property-list {
+    margin: 0.1em;
+    padding: 0.1em;
+    /*position: relative;*/
+    /*zoom: 1;*/
+    /*border:  1px solid #ccf;*/
+}
+
+span.property-label {
+    color: #888;
+    text-align: right;
+}
+
+div#results-header {
+    text-align: center;
+}
+
+#searchlabel {
+    /*text-align: center;*/
+    color: blue;
+    /*display:block;*/
+    /*margin: auto;*/
+    /*flex-grow: 1;*/
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/*.card {*/
+/*    margin: 0.4em;*/
+/*}*/
+
+
+/*div#content {*/
+/*    background-color: #eee;*/
+/*}*/
