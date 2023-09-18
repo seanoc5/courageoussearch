@@ -18,12 +18,13 @@ class Context {
     Date lastUpdated
 
     static hasMany = [
-            subjects: Subject, topics: Topic,
-//            concepts: Concept,
+            subjects: Subject,
+            topics: Topic,
             analyzers: Analyzer,
             tags: Tag,
             examples: ContentFragment,
-            comments: Comment]
+            comments: Comment
+    ]
 
     static constraints = {
         description nullable: true

@@ -9,7 +9,6 @@ class ContextController {
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        log.info "index contentContexts..."
         respond conceptService.list(params), model:[conceptCount: conceptService.count()]
     }
 
