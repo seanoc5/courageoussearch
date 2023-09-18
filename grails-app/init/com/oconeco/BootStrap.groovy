@@ -55,8 +55,6 @@ class BootStrap {
 
         Tag tagTest = new Tag(label: "Test", description: 'This is a test', defaultTag: true, createdBy: robot)
                 .addToComments(commentTest)
-//                .addToContentContexts(contextTesting)
-//                .addToContentContexts(contextResearch)
                 .save(flush: true)
 
         Context contextTesting = new Context(label: 'General Testing', description: 'Bootstrapped placeholder, replace me', time: 'unknown',
