@@ -1,6 +1,6 @@
 package com.oconeco
 
-import static com.oconeco.User.*
+import grails.gorm.transactions.Transactional
 
 class BootStrap {
     SystemService systemService
