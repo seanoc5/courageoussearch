@@ -33,6 +33,8 @@ I (currently) intend to keep the Enterprise-oriented project proprietary. It is 
 
 I also hope to find a few spare hours to document where I have implemented Grails-thingies and provide pointers to examples. I expect that the majority of people using Grails already know these things, and therefor these 'pointers' may not be of much use. If you are interested, please feel free to contact me on this github project and let me know what you are interested in. No promises, but I do welcome the chance to help give back a bit if I can.
 
+For anyone interested, [OconEco](http://www.oconeco.com) is the start-up that has been primarily focused on economics. 
+I am involved with the goal of improving stakeholder engagement and lowering the cost of decision making. More on that elsewhere...   
 
 ### Description:
 
