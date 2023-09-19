@@ -7,9 +7,9 @@ This is likely only appealing to technically adventurous folks at the moment. In
 I also aspire to including `Analysis` processes that will include Machine Learning to do significant "heavy lifting" in helping users search and find.
 
 ## Getting Started
+- _(**optional** but helpful)_ [sdkman](https://sdkman.io/install) is a nice option for grails/groovy/jdk and a bunch of other things
 - install groovy 3.0.11
 - install [Grails](https://grails.org/) (5.2.4)  
-  - [sdkman](https://sdkman.io/install) is a nice option for grails/groovy/jdk and a bunch of other things
   - grails will download/use the proper gradle (7.2)  
     - note: I had problems with Gradle 8 getting mixed in because I was sloppy, beware! 
 - install/use JDK 11 (or perhaps up to 16??)
