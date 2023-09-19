@@ -1,5 +1,5 @@
 div.doc-list {
-    max-height: 20rem ;
+    max-height: 40rem ;
     overflow: auto;
     overflow-clip-margin: 8px;
 
@@ -18,7 +18,7 @@ div.doc-list {
     border: #6f42c1 1px solid;
 }
 
-div.content.title {
+span.content.title {
     font-weight: bold;
     color:darkgoldenrod;
     border-bottom: 1px solid black;

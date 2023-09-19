@@ -1,3 +1,4 @@
+<%@ page import="com.oconeco.Context; com.oconeco.SearchConfiguration" %>
 <!doctype html>
 <html lang="en" class="no-js">
 <head>
@@ -94,12 +95,12 @@
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown-content">
                         <li><g:link controller="system" action="setup" class="nav-link" title="Development hack to get demo/starter domain objects to work with.">Dev Setup</g:link></li>
                         <li><g:link controller="system" class="dropdown-item"></g:link></li>
-                        <li><div class="dropdown-divider" /></li>
+                        <li><div class="dropdown-divider"/></li>
                         <li><g:link controller="system" class="nav-link" title="Overview/dashboard.">Overview/dashboard</g:link></li>
                         <li><g:link controller="system" action="grails" class="nav-link" title="Grails details and backend information">Grails Information</g:link></li>
                         <li><g:link controller="user" class="nav-link" title="">Users</g:link></li>
                         <li><g:link controller="organization" class="nav-link" title="">Organizations</g:link></li>
-                        <li><div class="dropdown-divider" /></li>
+                        <li><div class="dropdown-divider"/></li>
                         <li><g:link controller="analyzer" class="nav-link" title="">Analyzers</g:link></li>
                     </ul>
                 </li>
@@ -114,18 +115,30 @@
 </nav>
 
 
-<div class="container-fluid" >
+<div class="container-fluid">
     <g:form action="save" controller="search" class="">
-        <div class="row input-group">
-            <input id="contexts-global" class="col-3 my-1 me-sm-2 " type="search" name="contexts-select" placeholder="pick a context" aria-label="Context" />
-            <input id="context-global-id" class="col-1" type="hidden" name="context" />
-            <label for="contexts-global" class="col-1 my-1 me-2">Context</label>
-        </div>
+    %{--        <div class="row input-group">--}%
+    %{--            <input id="contexts-global" class="col-3 my-1 me-sm-2 " type="search" name="contexts-select" placeholder="pick a context" aria-label="Context" />--}%
+    %{--            <input id="context-global-id" class="col-1" type="hidden" name="context" />--}%
+    %{--            <label for="contexts-global" class="col-1 my-1 me-2">Context</label>--}%
+    %{--        </div>--}%
 
+    %{--        <div class="row input-group">--}%
+    %{--            <input id="search-config-global" class="col-3 my-1 me-sm-2" type="search" name="search-config-select" placeholder="pick a search config" aria-label="Search Configuration" />--}%
+    %{--            <input id="search-config-global-id" class="" type="hidden" name="configuration" />--}%
+    %{--            <label for="search-config-global" class="col-1 my-1 me-2">Search Config</label>--}%
+    %{--        </div>--}%
         <div class="row input-group">
-            <input id="search-config-global" class="col-3 my-1 me-sm-2" type="search" name="search-config-select" placeholder="pick a search config" aria-label="Search Configuration" />
-            <input id="search-config-global-id" class="" type="hidden" name="configuration" />
-            <label for="search-config-global" class="col-1 my-1 me-2">Search Config</label>
+            <g:select name="configuration"
+                      from="${SearchConfiguration.list()}"
+                      optionKey="id"
+                      optionValue="label"
+                      class="col-3 my-1 me-sm-2"/>
+            <g:select name="context"
+                      from="${Context.list()}"
+                      optionKey="id"
+                      optionValue="label"
+                      class="col-3 my-1 me-sm-2"/>
         </div>
 
         <div class="row">

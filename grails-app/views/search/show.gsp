@@ -37,14 +37,15 @@
 
         <div id="search-data">
 
-            <f:display bean="search" order="query, context, tags"/>
+            <f:display bean="search" order="query, context, configuration, tags, dateCreated"/>
 
             <div class="row">
+%{--            todo - check if we can add searchResults to existing search --}%
                 <g:each in="${search.searchResults}" var="result" status="i">
-                    <div class="col-lg-6 border-success">
-                        Show Result:
-                        <g:link controller="searchResult" action="show" id="${search.searchResults[i].id}" >${search.searchResults[i]}</g:link>
-                        <div class="attention">Config & Docs</div>
+                    <div class="col-lg-12 border-success">
+%{--                        Show Result:--}%
+                        <g:link controller="searchResult" action="show" id="${search.searchResults[i].id}" title="Jump to Search Results detail page (slightly more screen real-estate/less clutter??)">${search.searchResults[i]}</g:link>
+%{--                        <div class="attention">Config & Docs</div>--}%
                         <f:display bean="${search.searchResults[i]}" order="config, documents"/>
                     </div>
                 </g:each>

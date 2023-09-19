@@ -16,7 +16,7 @@ class Search {
     Date lastUpdated
 
     static hasMany = [
-            searchResults: SearchResult,
+            searchResults: SearchResult,        //todo - check if we can add searchResults to existing search
             tags         : Tag,
             comments     : Comment
     ]
