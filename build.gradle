@@ -79,7 +79,13 @@ dependencies {
 //    compile "org.grails.plugins:async-http-builder:"
     implementation "org.jsoup:jsoup:1.16.1"
     //https://javaee.github.io/javamail/
-    implementation("com.sun.mail:javax.mail:1.6.2")
+//    implementation("com.sun.mail:javax.mail:1.6.2")
+
+    implementation "org.apache.tika:tika-core:2.8.0"
+    implementation "org.apache.tika:tika-parsers-standard-package:2.8.0"
+
+    implementation 'net.dankito.readability4j:readability4j:1.0.8'
+
 
 }
 
