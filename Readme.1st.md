@@ -1,22 +1,23 @@
 # Overview of CourageousSearch
+This is aimed at being a personal search tool. At the moment it uses the Brave Search API to perform searches. 
+Eventually I expect it will support multiple "SearhConfigurations" and provide an easy way for users to add context and tuning to their search process.
 
-## Why Grails?
-Because I used it back in a time long-long ago, and I thought it would be easy to jump back in _(jury is still out on that assumption)_.
+This is likely only appealing to technically adventurous folks at the moment. In a few months it may grow to be more user friendly.
 
-But...
-I still like Grails, and look forward to hopefully porting to Micronaut, which seems to be the next best thing (for me).
+I also aspire to including `Analysis` processes that will include Machine Learning to do significant "heavy lifting" in helping users search and find.
 
-Please assume all code, confiruration, and even documentaiton here is suspect until proven otherwise.
+For now the functionality is very basic, but perhaps interesting:
+- Use Brave Search API to:
+  - send searches
+  - retrieve source webpage content in addition to Brave's summary
+- Allow for setting `SearchConfig`
+  - currently only tested with Brave, but should be extensible
+  - quite useful for [Brave Goggles](https://github.com/brave/goggles-quickstart) 
+- Allow for setting `Context`
+  - for use in future _Personal_ ML and result analysis
+  - potentially also modify search parameters for a 'session' (aka context/intent/goal)
 
-I am focused on rapid proof-of-concept rather than best practices. I welcome any constructive feedback and improvements. 
-That said: if something smells questionable, assume I have misuderstood something (lots of things...?).
 
-
-## Purpose
-This is a "Personal" search tool. My goal is add some tooling around various search efforts and hopefully create something 
-both interestin and useful.
-
-One quick example is the ability to define a `SearchTemplate` that has multiple `SearchConfiguration`s _(i.e. configurations for different search engines, or different configurations of a given engine, ... etc)_.
 
 I stumbled across the `Brave` browser, and then continued blindly to discover the Brave API _(which I really like)_. 
 Things got more interesting for me when I found the `Goggles` beta functionality. 
@@ -32,11 +33,11 @@ I (currently) intend to keep the Enterprise-oriented project proprietary. It is 
 
 I also hope to find a few spare hours to document where I have implemented Grails-thingies and provide pointers to examples. I expect that the majority of people using Grails already know these things, and therefor these 'pointers' may not be of much use. If you are interested, please feel free to contact me on this github project and let me know what you are interested in. No promises, but I do welcome the chance to help give back a bit if I can.
 
-### Description:
-`SearechTemplates` describe a broad use-case (search domain, configs,....etc)
-Each template can have one or more Configuration.
 
-`SearchConfigurations` roughly align to a specific search engine with a given (or default) set of parameters/setup
+### Description:
+
+`SearchConfigurations` roughly align to a specific search engine with a given (or default) set of parameters/setup. Please note that the initial configurations need valid Brave Search API tokens.
+See: https://api.search.brave.com/login
 
 A `Search` is tpyically a specific search (user, or system generated)
 It will use a sepcific Search Tempalte or use the "default"
@@ -46,141 +47,35 @@ The `SearchConfig` will handle performing the relevant search,
 as well as _converting the results into proper persistence objects_ (search results & docs, but possibly also Solr results docs)
 
 ## outline
-- SearchTemplate
-  - SearchConfiguration+
 
 - Search
-  - SearchTemplate+
-    - SearchConfiguration+
+  - SearchConfiguration 
   - SearchResults+
     - SearchConfiguration{1}
     - Document+
 
 
-## Technical notes _(in disarray)_
-### Grails GSP Templates and Views
-
-- https://www.youtube.com/watch?v=6pIOgv7cZzo&t=2s  minute: ~26  _wrapper.gsp example
-- many-to-many ui
-  - https://www.youtube.com/watch?v=snW1pTHrcXY ~minute 38:40
-
-
-[Fields Plugin Docs](https://grails-fields-plugin.github.io/grails-fields/snapshot/guide/index.html#customizingFieldRendering)
-
-changes from old to current:
-* _field to _wrapper
-* _input to _widget
-* _display to _displayWrapper
-* _displayWidget was added
-
-
-#### Template based
-* _wrapper.gsp
-  * wraps
-    * label and value (probably not other templates unless coded)
-    * _widget.gsp ??
-* _widget.gsp
-    * basic html tags/styling to **show** the value(s)
-    * interesting when talking about special values or parent/child (??true??)
-* _displayWrapper.gsp
-  * wraps label and value
-  * shows on index/table only(??)
-* _displayWidget.gsp
-  * just for widget (after label)
-  * shows in both index/table and show/detail
-
-
-#### examples
-_displayWrapper (show)
-
-    <div class="form-group">
-        <label class="control-label">${label}</label>
-        <p class="form-control-static">${widget}</p>
-    </div>
-
-_wrapper  (edit)
-
-    <div class="form-group ${invalid ? 'has-error' : ''}">
-        <label for="${field}" class="control-label">${label} <g:if test="${required}">*</g:if></label>
-        <div>
-            ${widget}
-            <g:if test="${errors}">
-                <g:each in="${errors}" var="error">
-                    <span class="help-block"><g:message error="${error}"/></span>
-                </g:each>
-            </g:if>
-        </div>
-    </div>
-
-_widget (edit)
-
-    <g:if test="${required}">
-        <g:textField name="${property}" value="${value}" required="required" class="form-control"/>
-    </g:if>
-    <g:else>
-        <g:textField name="${property}" value="${value}" class="form-control"/>
-    </g:else>
-
-_displayWidget (show)
-
-    <img src="${value}"/>
-
-
-#### View based:
-* index/list:
-  * _displayWrapper
-  * _displayWidget.gsp
-* Show/details
-  *  _displayWidget.gsp
-  * not label (need to override f:field??)
-* edit/form
-  * _wrapper.gsp
-  * _widget.gsp
-
-#### pending
-* _list.gsp
-* _table.gsp
-* embedded.gsp
-
-**NOTE**
-      plugin:
-        fields:
-            disableLookupCache: true
-
-
-### Embedding templates
-
-* You can customize how embedded properties are surrounded by providing a layout at grails-app/views/layouts/_fields/embedded.gsp which will override the default layout provided by the plugin.
-* When you use the f:all tag it will automatically handle embedded properties in this way.
-* [stack overflow answer](https://stackoverflow.com/questions/49036354/custom-fields-displayed-by-grails-fields-plugin-with-fdisplay)
-  * In your _displayWrapper you should use ${widget} instead of ${value} as you want the rendering of _displayWidget to get the specific types of rendering.
-
-### interesting options:
-
-* grails-app/views/controllerName/actionName/propertyName/
-  * g-a/v/content/show/uri
-    *
-* grails-app/views/controllerName/actionName/propertyType/
-* grails-app/views/_fields/associationType/
-
-[Demo repo: g3-fields-plugin-demo.git](https://github.com/sbglasius/g3-fields-plugin-demo.git)
-
-    <g:form resource="${this.rider}" method="PUT"> \
-        <g:hiddenField name="version" value="${this.rider?.version}" />
-        <fieldset class="form">
-            <tmpl:form/>
-        </fieldset>
-        <fieldset class="buttons">
-            <input class="save" type="submit" value="${message(code: 'default.button.update.label', default: 'Update')}" />
-        </fieldset>
-    </g:form>
-
-_displayWidget.gsp
+## Screenshots
+![Sample Dashboard](/home/sean/work/courageoussearch/documentation/dashboard.png)
 
 ### Todo
+- implement reasonable tagging/commenting etc
+  - upvote/downvote sites, docs, searchResults,...
+  - allow users (and analyzer-bots) to assign tags and topics to various things
+- Fix ugly/bad UI
+  - Proper approach for searchConfig setup and tokens
+  - Better handling of picking contexts and configs
+  - Better UI/UX in general
 - views-json: apply plugin:"org.grails.plugins.json-views
   - build script dependencies:  classpath "org.grails.plugins.views-gradle:1.0.1"  _(or higher version)_
-  -
+-Add `Analysis` functionality
+  - e.g. rerank results based on personal preferences
+  - NLP and other advanced ML analysis
+    - sentence classifier to highlight questions, answers, interesting things, and fluff... (still very vague)
+  - assess/rank the result set in general (not sure how or why yet, but seems interesting)
+- Add searchConfig to process solr results
+  - Specifically connecto to a [Solr-System](https://github.com/seanoc5/solr-system) solr instance contain local/personal crawled info
+- migrate to Micronaut
 
 
 # other & misc

@@ -1,31 +1,45 @@
 # Notes for developers/technical folks
 
 ## Why Grails?
+Because I used it back in a time long-long ago, and I thought it would be easy to jump back in _(jury is still out on that assumption)_.
+
+But...
+I still like Grails, and look forward to hopefully porting to Micronaut, which seems to be the next best thing (for me).
+
+Please assume all code, confiruration, and even documentaiton here is suspect until proven otherwise.
+
+I am focused on rapid proof-of-concept rather than best practices. I welcome any constructive feedback and improvements. 
+That said: if something smells questionable, assume I have misuderstood something (lots of things...?).
+
+## Points of Potential (Grails) Interest
+- async calls in FetchService (gather actual content from the links returned--in addition to snippets from Brave)
+- templates and fields plugin 
+  - this is likely to "old school" and replaced by Angular or other SPA
+  - however: possibly useful for older-timers
+- Readability4j
+  - Nice Kotlin package mimicking Firefox's readability JS code
+  - get the content for local display, but... 
+  - more importantly: get structure of doc, for splitting into paragraphs, then sentences....
+  - _more to come on this..._
+- Tika 
+  - mimeType detection
+  - parsing non-html files 
+  - I could not get tika to return "formatted" text, but there is likely a good way to do so...
 
 
 ## Search objects layout
 ### Description:
-Templates describe a broad use-case (search domain, configs,....etc)
-Each template can have one or more Configuration.
-Search configurations roughly align to a specific search engine with a given (or default) set of parameters/setup
 
 A search is tpyically a specific search (user, or system generated)
-It will use a sepcific Search Tempalte or use the "default"
-The Template can have multiple configs (search multiple engines or engine configs)
-
+It will use a sepcific SearchConfiguration
 The search Config will handle performing the relevant search,
 as well as _converting the results into proper persistence objects_ (search results & docs, but possibly also Solr results docs)
 
 ## outline
-- SearchTemplate
-  - SearchConfiguration+
-
 - Search
-  - SearchTemplate+
-    - SearchConfiguration+
+  - SearchConfiguration+
   - SearchResults+
-    - SearchConfiguration{1}
-    - Document+
+    - Content/Document+
 
 
 
@@ -121,8 +135,6 @@ _displayWidget (show)
 
 ## Embedding templates
 More to come, but here is a start:
-
-
 
 * You can customize how embedded properties are surrounded by providing a layout at grails-app/views/layouts/_fields/embedded.gsp which will override the default layout provided by the plugin.
 * When you use the f:all tag it will automatically handle embedded properties in this way.
