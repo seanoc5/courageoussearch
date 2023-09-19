@@ -59,6 +59,8 @@ as well as _converting the results into proper persistence objects_ (search resu
 
 ## Screenshots
 ![Sample Dashboard](./documentation/dashboard.png)
+![Search with Results](./documentation/searchShow.png)
+![Result Content with parsed (Readablity4j) structuredContent](./documentation/contentShow.png)
 
 ### Todo
 - implement reasonable tagging/commenting etc
