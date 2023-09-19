@@ -58,8 +58,14 @@ as well as _converting the results into proper persistence objects_ (search resu
 
 
 ## Screenshots
+Example of the dashboard:
 ![Sample Dashboard](./documentation/dashboard.png)
+
+Example of a SearchResults page showing Brave `description` snippets:
 ![Search with Results](./documentation/searchShow.png)
+
+Example of a single result (aka `Content`, or document) with `structuredContent` which is the result of [Readability4j](https://github.com/dankito/Readability4J) parsing.
+Note: this is still a beta implementation on my part--more to come...
 ![Result Content with parsed (Readablity4j) structuredContent](./documentation/contentShow.png)
 
 ### Todo
