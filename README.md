@@ -56,7 +56,7 @@ as well as _converting the results into proper persistence objects_ (search resu
 
 
 ## Screenshots
-![Sample Dashboard](/home/sean/work/courageoussearch/documentation/dashboard.png)
+![Sample Dashboard](./documentation/dashboard.png)
 
 ### Todo
 - implement reasonable tagging/commenting etc
