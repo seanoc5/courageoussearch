@@ -2,10 +2,13 @@ package com.oconeco
 
 /**
  * Generalized content object (document, webpage, email, etc)
+ * Went with 'Content' rather than 'Document' hoping to be more general (i.e. messages), but ack that this is not fully intuitive
  */
 class Content {
     String title        //required
     String uri          //required
+    /** snippets back from search engine, or summary from ML, or actual 'description' from author/publisher */
+    String description
 
     /** url or file path */
     String path
@@ -14,25 +17,28 @@ class Content {
     /** any additional parameters, such as url query params, where relevant (optional) */
     String params
 
-    String content
-    String description
+
+    /** extracted text from source document (typically fetched by ContentService.fetchContent(contentDoc) */
+    String bodyText
+    Long textSize = 0
     /** html/xml version typically, but perhaps other (markdown, json,...) */
     String structuredContent
-    // todo - move this to more explicit tracking and identification, machine learning, etc */
+    Long structureSize = 0
+
     String author
     String language
 
-    // todo -- revisit type/subtype
-    /** most oriented to web results, i.e. Brave api 'type' result value */
-//    ThingType type
+    // todo -- revisit type/subtype most oriented to web results, i.e. Brave api 'type' result value
+    //    ThingType type            // todo -- maybe switch from String to more controlled typing??
     String type
     String subtype
+    String mimeType
+
     Date publishDate
-
-//    List<Tag> tags = []
-//    List<Comment> comments = []
-//    List<ContentFragment> fragments = []
-
+    /** originally added to capture Brave api 'family_friendly' flag info... */
+    String offensiveFlag = ''
+    /** assuming favicon is more intuitive than 'image', but could be any url-ish image for this content */
+    String favicon
     Date dateCreated
     Date lastUpdated
 
@@ -44,7 +50,7 @@ class Content {
         params nullable: true
 
         description nullable: true, type: 'text', widget:'textarea'
-        content nullable: true, type: 'text'
+        bodyText nullable: true, type: 'text'
         structuredContent nullable: true, type: 'text'
 
         author nullable: true
@@ -52,13 +58,15 @@ class Content {
 
         type nullable: true
         subtype nullable: true
+        mimeType nullable: true
+        offensiveFlag nullable: true
+        favicon nullable: true, size:(0..2048)
 
         publishDate nullable: true
     }
 
     @Override
     String toString() {
-//        return "${title} ($uri)"
         return title
     }
 }

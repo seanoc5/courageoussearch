@@ -1,3 +1,4 @@
+<%@ page import="com.oconeco.SystemService" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +24,7 @@
                 <p>
                     <b>Note:</b> Bootstrap/SystemController.setup() code creates several (4) demo brave search configurations.
                 <br/>
-                    These configurations start with placeholder (invalid) tokens <span class="attention">${com.oconeco.SystemService.TOKEN_PLACEHOLDER} </span>.
+                    These configurations start with placeholder (invalid) tokens <span class="attention">${SystemService.TOKEN_PLACEHOLDER} </span>.
                 <br/>
                     This form is a quick hack to replace that placeholder text with real tokens.
                     Go to: <a href="https://api.search.brave.com/register">Register for Brave API account...</a>

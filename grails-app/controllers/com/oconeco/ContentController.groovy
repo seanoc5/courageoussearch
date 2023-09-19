@@ -1,8 +1,9 @@
 package com.oconeco
 
-class ContentController {
-
+class   ContentController {
     ContentService contentService
+    FetchService fetchService
+
     static scaffold = Content
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
@@ -31,94 +32,26 @@ class ContentController {
         List<Content> docs = Content.findAllBySourceIlike(s, params)
         respond docs, model:[contentCount: contentService.count()], view: 'index'
     }
-/*
 
-    def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond contentService.list(params), model:[contentCount: contentService.count()]
+    /**
+     * entry point to get details and then call something (ContentService for now) to get the page text
+     * this will likely need to check if the URL is a single-page-arch (SPA) and if so, fire up GEB-ish stuff to get headless browser to get the resolved text
+     *
+     * todo add Organization awareness to better know how to get text, and how to strip boilerplate wrapping (header/nav/footer)...
+     *
+     * @param id Content/doc id to go fetch
+     *
+     */
+    def fetchContent(Long id) {
+        log.info "fetchContent(id:$id)..."
+        Content doc = Content.get(id)
+        if (doc) {
+            fetchService.fetchContent(doc)
+//        render text: "More code here...."
+        } else {
+            log.warn "Get flash message here about what went wrong... couldn't find..."
+        }
+        redirect action: 'show', id: id
     }
 
-    def show(Long id) {
-        respond contentService.get(id)
-    }
-
-    def create() {
-        respond new Content(params)
-    }
-
-    def save(Content content) {
-        if (content == null) {
-            notFound()
-            return
-        }
-
-        try {
-            contentService.save(content)
-        } catch (ValidationException e) {
-            respond content.errors, view:'create'
-            return
-        }
-
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'content.text', default: 'Content'), content.id])
-                redirect content
-            }
-            '*' { respond content, [status: CREATED] }
-        }
-    }
-
-    def edit(Long id) {
-        respond contentService.get(id)
-    }
-
-    def update(Content content) {
-        if (content == null) {
-            notFound()
-            return
-        }
-
-        try {
-            contentService.save(content)
-        } catch (ValidationException e) {
-            respond content.errors, view:'edit'
-            return
-        }
-
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'content.text', default: 'Content'), content.id])
-                redirect content
-            }
-            '*'{ respond content, [status: OK] }
-        }
-    }
-
-    def delete(Long id) {
-        if (id == null) {
-            notFound()
-            return
-        }
-
-        contentService.delete(id)
-
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'content.text', default: 'Content'), id])
-                redirect action:"index", method:"GET"
-            }
-            '*'{ render status: NO_CONTENT }
-        }
-    }
-
-    protected void notFound() {
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.not.found.message', args: [message(code: 'content.text', default: 'Content'), params.id])
-                redirect action: "index", method: "GET"
-            }
-            '*'{ render status: NOT_FOUND }
-        }
-    }
-*/
 }

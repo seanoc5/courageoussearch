@@ -1,5 +1,6 @@
 package com.oconeco
 
+import grails.async.Promise
 import grails.gorm.services.Service
 import groovy.json.JsonSlurper
 import org.jsoup.Jsoup
@@ -31,6 +32,8 @@ interface ISearchService {
 abstract class SearchService implements ISearchService {
     DateTimeFormatter braveAgeFormatter = DateTimeFormatter.ofPattern('MMMM d, u')
     SearchResultService searchResultService
+    FetchService fetchService
+
 
     /**
      * simple placeholder to default to 'browse.gsp' display -- todo consider better 'show()' methiod??
@@ -81,7 +84,12 @@ abstract class SearchService implements ISearchService {
                 if (search.validate()) {
                     try {
                         def bar = search.save()         // todo -- revisit, and see if this is resonable to save() here...?
-                        log.info "Saved search ($search) with results: ${search.searchResults}"
+                        log.debug "Saved search ($search) with results: ${search.searchResults}... now try fetching content..."
+
+                        log.info "\t\tfetch content for (${searchResult.documents.size()}) docs async (promises)..."
+                        Promise<List<String>> foo = fetchService.fetchPromised(searchResult)
+                        log.info "what to do with my promises? $foo"
+
                     } catch (Exception e) {
                         log.error "Exception on search.save(): $e"
                     }
@@ -126,7 +134,7 @@ abstract class SearchService implements ISearchService {
         String type = json.type
         int scode = response.statusCode()
         log.info "Search status: ${search.isDirty()}"
-        SearchResult searchResult = new SearchResult(query: query, type: type, search: search, config: config, responseBody: body, statusCode: scode )
+        SearchResult searchResult = new SearchResult(query: query, type: type, search: search, config: config, responseBody: body, statusCode: scode)
 
         def webResults = json.web.results
         webResults.each {
@@ -191,45 +199,6 @@ abstract class SearchService implements ISearchService {
         return s
     }
 
+
 }
 
-
-/*
-HttpGet httpGet = new HttpGet("https://postman-echo.com/get");
-URI uri = new URIBuilder(httpGet.getUri()).addParameter("param1", "value1")
-   .addParameter("param2", "value2")
-   .build();
-httpGet.setUri(uri);
-
-try (CloseableHttpClient client = HttpClients.createDefault();
-   CloseableHttpResponse response = (CloseableHttpResponse) client
-     .execute(httpGet, new CustomHttpClientResponseHandler())) {
-
-   final int statusCode = response.getCode();
-   assertThat(statusCode, equalTo(HttpStatus.SC_OK));
-}
-
-//        HttpClient client = HttpClient.create(baseUrl.toURL())
-//        HttpRequest request = HttpRequest.GET(UriBuilder.of(url)
-//                     .queryParam('limit', 25)
-//                     .queryParam('media', 'music')
-//                     .queryParam('entity', 'album')
-//                     .queryParam('q', "http get request grails 2023")
-//                     .build())
-//        HttpResponse<String> resp = client.toBlocking().exchange(request, String)
-//             String json = resp.body()
-        //         ObjectMapper objectMapper = new ObjectMapper()
-        //         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
-        //         SearchResult searchResult = objectMapper.readValue(json, SearchResult)
-        //         searchResult.results
-
-
-//import io.micronaut.http.client.BlockingHttpClient
-//import io.micronaut.http.client.HttpClient
-//import io.micronaut.http.HttpRequest
-//import io.micronaut.http.HttpResponse
-//import io.micronaut.http.client.exceptions.HttpClientResponseException
-//import io.micronaut.http.uri.UriBuilder
-//i
-
- */

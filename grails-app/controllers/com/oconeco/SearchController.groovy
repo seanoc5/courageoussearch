@@ -25,16 +25,23 @@ class SearchController {
         }
 
         SearchResult searchResult = searchService.execute(search)
-        log.info "Search result: $searchResult"
+        if(searchResult.statusCode==422){
+            String msg = "Is the search config(${search.configuration}) bad?? placeholder token??"
+            log.warn msg
+            flash.message = msg
+            redirect controllerName:'SearchConfiguration'
+        } else {
+            log.info "Search result: $searchResult"
 
-        session.lastSearch = search
+            session.lastSearch = search
 
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'search.text', default: 'Search'), search.id])
-                redirect search
+            request.withFormat {
+                form multipartForm {
+                    flash.message = message(code: 'default.created.message', args: [message(code: 'search.text', default: 'Search'), search.id])
+                    redirect search
+                }
+                '*' { respond search, [status: CREATED] }
             }
-            '*' { respond search, [status: CREATED] }
         }
     }
 
