@@ -10,6 +10,8 @@ class UrlMappings {
         }
 
         "/"(view:"/index")
+//        "/"(controller: 'searchConfiguration', view:"/index")
+
         "500"(view:'/error')
         "404"(view:'/notFound')
 
