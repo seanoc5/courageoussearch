@@ -6,6 +6,18 @@ This is likely only appealing to technically adventurous folks at the moment. In
 
 I also aspire to including `Analysis` processes that will include Machine Learning to do significant "heavy lifting" in helping users search and find.
 
+## Getting Started
+- install groovy 3.0.11
+- install [Grails](https://grails.org/) (5.2.4)  
+  - [sdkman](https://sdkman.io/install) is a nice option for grails/groovy/jdk and a bunch of other things
+  - grails will download/use the proper gradle (7.2)  
+    - note: I had problems with Gradle 8 getting mixed in because I was sloppy, beware! 
+- install/use JDK 11 (or perhaps up to 16??)
+- clone this repo
+- build
+- bootRun
+
+## More information
 For now the functionality is very basic, but perhaps interesting:
 - Use Brave Search API to:
   - send searches
@@ -25,6 +37,7 @@ Things got more interesting for me when I found the `Goggles` beta functionality
 Two of the public Goggles are [News from the Left](https://raw.githubusercontent.com/allsides-news/brave-goggles/main/left.goggles) and [News from the Right](https://raw.githubusercontent.com/allsides-news/brave-goggles/main/right.goggles). 
 My intent with `CourageousSearch` _(as opensource work)_ is to allow adventurous and technically-oriented users to have a tool that can help compare multiple "sources"
 in a convenience and semi-objective manner. _(More on that later)_  
+
 
 **Full Disclosure:** 
 I am developing a larger, more involved project that builds upon these basics. That will focus on Enterprise interests, 
