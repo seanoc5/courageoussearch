@@ -1,6 +1,9 @@
 package com.oconeco
 
 import grails.gorm.services.Service
+import org.jsoup.Jsoup
+import org.jsoup.nodes.Document
+import org.jsoup.safety.Safelist
 
 interface IContentService {
 
