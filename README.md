@@ -102,13 +102,4 @@ Note: this is still a beta implementation on my part--more to come...
 
 
 # other & misc
-[Micronaut data info](https://medium.com/agorapulse-stories/goodbye-grails-hello-micronaut-10-micronaut-data-759c6c36bc7)
-Micronaut Data JPA is more powerful and a good fit if you require some advanced ORM features such as
-
-http://docs.grails.org/latest/guide/services.html
-def author = Author.findById(id, [fetch:[books:"eager"]])
-http://gorm.grails.org/latest/hibernate/manual/index.html#fetching
-
-    static mapping = {
-        flights lazy: false
-    }
+See Readme.Developer.md if you have interest in the code, grails, etc
