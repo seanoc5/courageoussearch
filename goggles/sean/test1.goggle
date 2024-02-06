@@ -1,0 +1,15 @@
+! name: Political topics
+! description: Political issues, searches, etc
+! author: Courageous Search - sean
+! public: true
+! avatar: #FF8C00FF
+
+$boost=4,site=blog.ycombinator.com
+$boost=4,site=ciechanow.ski
+$boost=4,site=danluu.com
+$boost=4,site=kalzumeus.com
+$boost=4,site=signal.org
+$boost=4,site=lore.kernel.org
+
+$boost=3,site=bu.edu
+$boost=3,site=fareedzakaria.com
