@@ -4,7 +4,7 @@
 ! public: true
 ! avatar: #ff6600
 
-$discard
+!$discard
 $boost=4,site=blog.samaltman.com
 $boost=4,site=paulgraham.com
 $boost=4,site=blog.rust-lang.org
