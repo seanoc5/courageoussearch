@@ -1,0 +1,21 @@
+! name: Hacking Test
+! description: Sample cribbed from demo hacker-news goggle
+! author: Sean O'C
+! public: true
+! avatar: #ff6600
+
+$discard
+$boost=4,site=blog.samaltman.com
+$boost=4,site=paulgraham.com
+$boost=4,site=blog.rust-lang.org
+$boost=4,site=blog.ycombinator.com
+$boost=4,site=ciechanow.ski
+$boost=4,site=danluu.com
+$boost=4,site=kalzumeus.com
+$boost=4,site=signal.org
+$boost=4,site=antirez.com
+$boost=4,site=jacquesmattheij.com
+$boost=4,site=chris-granger.com
+$boost=4,site=letsencrypt.org
+$boost=4,site=teslamotors.com
+$boost=4,site=lore.kernel.org
