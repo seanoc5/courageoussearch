@@ -7,3 +7,400 @@
 $boost=3,site=bu.edu
 $boost=3,site=fareedzakaria.com
 
+! src: mine:(1)  other:(0)  nonCtx:(0)
+! doc: mine:(1)  other:(0)  nonCtx:(0)
+$boost=3,site=fordham.edu
+
+! src: mine:(1)  other:(0)  nonCtx:(0)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=2,site=foroalc2030.cepal.org
+
+! src: mine:(1)  other:(0)  nonCtx:(0)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=2,site=e-education.psu.edu
+
+! src: mine:(1)  other:(0)  nonCtx:(0)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=2,site=chass.usu.edu
+
+! src: mine:(1)  other:(0)  nonCtx:(0)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=2,site=reason.com
+
+! src: mine:(1)  other:(0)  nonCtx:(0)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=2,site=podcasts.apple.com
+
+! src: mine:(-1)  other:(0)  nonCtx:(0)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=2,site=thewrap.com
+
+! src: mine:(1)  other:(0)  nonCtx:(0)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=2,site=weforum.org
+
+! src: mine:(0)  other:(0)  nonCtx:(4)
+! doc: mine:(2)  other:(0)  nonCtx:(2)
+$boost=1,site=en.wikipedia.org
+
+! src: mine:(0)  other:(0)  nonCtx:(0)
+! doc: mine:(2)  other:(0)  nonCtx:(0)
+$boost=1,site=floridapolitics.com
+
+! src: mine:(0)  other:(0)  nonCtx:(2)
+! doc: mine:(1)  other:(0)  nonCtx:(0)
+$boost=1,site=britannica.com
+
+! src: mine:(0)  other:(0)  nonCtx:(2)
+! doc: mine:(1)  other:(0)  nonCtx:(0)
+$boost=1,site=jacksonville.com
+
+! src: mine:(0)  other:(0)  nonCtx:(0)
+! doc: mine:(1)  other:(0)  nonCtx:(0)
+$boost=1,site=joandonovan.org
+
+! src: mine:(0)  other:(0)  nonCtx:(3)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=1,site=census.gov
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(2)
+$boost=0,site=nytimes.com
+
+! src: mine:(0)  other:(0)  nonCtx:(3)
+! doc: mine:(0)  other:(0)  nonCtx:(1)
+$boost=0,site=washingtonpost.com
+
+! src: mine:(0)  other:(0)  nonCtx:(3)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=forbes.com
+
+! src: mine:(0)  other:(0)  nonCtx:(3)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=stackoverflow.com
+
+! src: mine:(0)  other:(0)  nonCtx:(2)
+! doc: mine:(0)  other:(0)  nonCtx:(1)
+$boost=0,site=pbs.org
+
+! src: mine:(0)  other:(0)  nonCtx:(2)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=npr.org
+
+! src: mine:(0)  other:(0)  nonCtx:(2)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=jaxdailyrecord.com
+
+! src: mine:(0)  other:(0)  nonCtx:(0)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=facebook.com
+
+! src: mine:(0)  other:(0)  nonCtx:(2)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=ballotpedia.org
+
+! src: mine:(0)  other:(0)  nonCtx:(2)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=wsj.com
+
+! src: mine:(0)  other:(0)  nonCtx:(2)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=theguardian.com
+
+! src: mine:(0)  other:(0)  nonCtx:(2)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=foreignaffairs.com
+
+! src: mine:(0)  other:(0)  nonCtx:(2)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=time.com
+
+! src: mine:(0)  other:(0)  nonCtx:(2)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=apnews.com
+
+! src: mine:(0)  other:(0)  nonCtx:(2)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=cfr.org
+
+! src: mine:(0)  other:(0)  nonCtx:(2)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=imdb.com
+
+! src: mine:(0)  other:(0)  nonCtx:(2)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=bbc.com
+
+! src: mine:(0)  other:(0)  nonCtx:(0)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=geeksforgeeks.org
+
+! src: mine:(0)  other:(0)  nonCtx:(2)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=github.com
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(2)
+$boost=0,site=cnn.com
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(2)
+$boost=0,site=cnbc.com
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(2)
+$boost=0,site=theatlantic.com
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(1)
+$boost=0,site=nbcnews.com
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(1)
+$boost=0,site=history.fas.harvard.edu
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(1)
+$boost=0,site=news.harvard.edu
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(1)
+$boost=0,site=state.gov
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(1)
+$boost=0,site=weta.org
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(1)
+$boost=0,site=aljazeera.com
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=thecrimson.com
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=twitter.com
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=cbsnews.com
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=nbcboston.com
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=reuters.com
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=foxnews.com
+
+! src: mine:(0)  other:(0)  nonCtx:(-1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=youtube.com
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=thoughtco.com
+
+! src: mine:(0)  other:(0)  nonCtx:(-1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=quora.com
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=news4jax.com
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=coj.net
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=businessinsider.com
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=linkedin.com
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=vox.com
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=axios.com
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=breitbart.com
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=abcnews.go.com
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=usatoday.com
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=thehill.com
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=politico.com
+
+! src: mine:(0)  other:(0)  nonCtx:(-1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=nypost.com
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=people.com
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=washingtonexaminer.com
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=pewresearch.org
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=harvard.edu
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=aei.org
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=nationalreview.com
+
+! src: mine:(0)  other:(0)  nonCtx:(-1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=anneapplebaum.com
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=globalaffairs.org
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=penguinrandomhouse.com
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=americanacademy.de
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=wsb.com
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=abc.net.au
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=huffpost.com
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=getbootstrap.com
+
+! src: mine:(0)  other:(0)  nonCtx:(-1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=mdbootstrap.com
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=w3schools.com
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=scaler.com
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=gist.github.com
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=linuxhint.com
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=eurasiagroup.net
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=law.cornell.edu
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=dailydot.com
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=dailymail.co.uk
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=mirror.co.uk
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=newsweek.com
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=dev.to
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=news.yahoo.com
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=clerk.house.gov
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=congress.gov
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=caucus.militarytimes.com
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=mediaite.com
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=rollingstone.com
+
+! src: mine:(0)  other:(0)  nonCtx:(-1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=0,site=thedailybeast.com
+
+! src: mine:(0)  other:(0)  nonCtx:(0)
+! doc: mine:(0)  other:(0)  nonCtx:(1)
+$boost=0,site=gordonforwyoming.com
+
+! src: mine:(0)  other:(0)  nonCtx:(0)
+! doc: mine:(0)  other:(0)  nonCtx:(1)
+$boost=0,site=drewfaust.com
+
+! src: mine:(0)  other:(0)  nonCtx:(0)
+! doc: mine:(0)  other:(0)  nonCtx:(1)
+$boost=0,site=asiasociety.org
+
+
