@@ -1,9 +1,15 @@
-! name: test 3
-! description: Sample cribbed from demo hacker-news goggle
+! name: test 4
+! description: testing goggle syntax
 ! author: Sean O'C
 ! public: true
-! avatar: #ff6600
+! avatar: #FF8C00FF
 
-$boost=4,site=blog.samaltman.com
-$boost=4,site=paulgraham.com
-$boost=4,site=blog.rust-lang.org
+
+! src: mine:(1)  other:(0)  nonCtx:(0)
+! doc: mine:(1)  other:(0)  nonCtx:(0)
+$boost=3,site=bu.edu
+
+! src: mine:(1)  other:(0)  nonCtx:(0)
+! doc: mine:(1)  other:(0)  nonCtx:(0)
+$boost=3,site=fareedzakaria.com
+
