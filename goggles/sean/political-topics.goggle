@@ -2,14 +2,8 @@
 ! description: testing goggle syntax
 ! author: Sean O'C
 ! public: true
-! avatar: #FF8C00FF
+! avatar: #ff6600
 
-
-! src: mine:(1)  other:(0)  nonCtx:(0)
-! doc: mine:(1)  other:(0)  nonCtx:(0)
 $boost=3,site=bu.edu
-
-! src: mine:(1)  other:(0)  nonCtx:(0)
-! doc: mine:(1)  other:(0)  nonCtx:(0)
 $boost=3,site=fareedzakaria.com
 
