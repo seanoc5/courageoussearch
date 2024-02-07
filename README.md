@@ -1,3 +1,6 @@
+# NOTE: OUT OF DATE
+Please note: this repo is several months out of date. I plan to update it RSN, but at the moment please know the code here is very far out of sync.
+
 # Overview of CourageousSearch
 This is aimed at being a personal search tool. At the moment it uses the Brave Search API to perform searches. 
 Eventually I expect it will support multiple "SearhConfigurations" and provide an easy way for users to add context and tuning to their search process.
