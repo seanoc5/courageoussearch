@@ -35,8 +35,28 @@ Here is the second/bottom part of the screen, showing the textarea meant to popu
 And if you are interested in more details, toggle the `Details` widget (see 1st image):
 ![](./grails-app/assets/images/documentation/google-example1-details.png)
 
+Here is a link to a snapshot of the github source/goggle file that has been submitted:
+https://github.com/seanoc5/courageoussearch/blob/25bd803ec7073f791896b1103fa6ac7abacb8b23/goggles/sean/cooking-cuisine.goggle
+**Note**: Github seems to (quite reasonably) cache updates for a few/5 minutes, using the commit hash avoids that, and hopefully reduces confusion if/when I update that goggle :-).
+
+And here is Brave's friendly little "try it now" url:
+https://search.brave.com/goggles?goggles_id=https%3A%2F%2Fraw.githubusercontent.com%2Fseanoc5%2Fcourageoussearch%2F25bd803ec7073f791896b1103fa6ac7abacb8b23%2Fgoggles%2Fsean%2Fcooking-cuisine.goggle
+
 ## Results Comparison
 Interestingly, one of my early interests in Brave Search API was to compare two goggles side-by-side, e.g. [News from the LEFT](https://raw.githubusercontent.com/allsides-news/brave-goggles/main/left.goggles) vs [News from the Right](https://search.brave.com/goggles/profile?goggles_id=https%3A%2F%2Fraw.githubusercontent.com%2Fallsides-news%2Fbrave-goggles%2Fmain%2Fright.goggles)   
+
+
+## CourageousSearch Background/Explanation
+In the simplest use-case, CourageousSearch acts as a wrapper and graphic user interface (GUI) around the Brave Search API. 
+
+CS also mirrors various internal system data (Grails GORM object models & data) to bundled Solr collections for improved searching and text processing. As such, CS is intended to be flexible enough to handle various custom Solr stores with minimal customization. Eventually CourageousSearch will integrate with [Solr-System](https://github.com/seanoc5/solr-system) deployments to allow both Internet and Intranet search and processing.  
+
+As of Feb 2024, CS is beta-quality. I should be much further along, but... life...
+
+It is a decent proof-of-operation, but still has plenty of rough edges and gaps in performance tuning. Once I get a working hosted version of CourageousSearch that I am happy with, I will refresh the github repo and make the code available to aone
+
+
+### Other Contexts and thoughts on Contexts
 
 For example: I have defined a Context for my web-dev searches, with a very creative label of `Web Development`. This is meant to group all my queries about:
 * html
@@ -46,11 +66,3 @@ For example: I have defined a Context for my web-dev searches, with a very creat
 
 As I got into actually using my own CS app, I made a sub-Context of `Bootstrap` (I did mention these are flexible, and intentionally do **not** enforce any rules or rigor).
 
-
-## CourageousSearch Background/Explanation
-In the simplest use-case, CourageousSearch acts as a wrapper and graphic user interface (GUI) around the Brave Search API. 
-CS also mirrors various internal system data (Grails GORM object models & data) to bundled Solr collections for improved searching and text processing. As such, CS is intended to be flexible enough to handle various custom Solr stores with minimal customization. Eventually CourageousSearch will integrate with [Solr-System](https://github.com/seanoc5/solr-system) deployments to allow both Internet and Intranet search and processing.  
-
-As of Feb 2024, CS is still in Beta stages. It is a decent proof-of-operation, but still has plenty of rough edges and gaps in performance tuning.  
-
-Once I get a working hosted version of CourageousSearch that I am happy with, I will refresh the github repo and make the code available to aone
