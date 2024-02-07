@@ -16,24 +16,24 @@ In CourageousSearch a `Context` is a general "frame of mind" or "intent" for a u
 By default a CS search will use a predefined search template. My default template has just one search engine/configuration, and that is my general Brave Search API configuration ([free tier](https://api.search.brave.com/app/subscriptions/subscribe) at the moment, but I plan to upgrade). 
 
 For demo purposes, I will show a typical CS search using my `Default Template`:
-![](/home/sean/work/CorpusMinder/grails-app/assets/images/documentation/search-template-list.png)
+![](/home/sean/work/CourageousSearch/grails-app/assets/images/documentation/search-template-list.png)
 which in turn links to my `Brave Default` search config:
-![](/home/sean/work/CorpusMinder/grails-app/assets/images/documentation/brave-default-config.png)
+![](/home/sean/work/CourageousSearch/grails-app/assets/images/documentation/brave-default-config.png)
 
 Here is a semi-random search example:
-![](/home/sean/work/CorpusMinder/grails-app/assets/images/documentation/search-screen-example1.png)
+![](/home/sean/work/CourageousSearch/grails-app/assets/images/documentation/search-screen-example1.png)
 
 I take full responsibility for the horrible UI/design, but I am a back-end guy, not front-end. If anyone ends up finding this app useful, and nudges me a few times, I will find someone to make the UI palatable :-)
 
 Once someone (me, you, another user...) annotates "enough" sites and result docs, we can switch from searching/annotating, to actually building a custom **goggle**!
 Here is the collected information (boosted sources & documents) for `Cooking & Cuisine` Context _(page 1 of several)_:
-![](/home/sean/work/CorpusMinder/grails-app/assets/images/documentation/google-example1-basic.png)
+![](/home/sean/work/CourageousSearch/grails-app/assets/images/documentation/google-example1-basic.png)
 
 Here is the second/bottom part of the screen, showing the textarea meant to populate a goggle-readable file on github or similar:
-![](/home/sean/work/CorpusMinder/grails-app/assets/images/documentation/google-example-textarea.png)
+![](/home/sean/work/CourageousSearch/grails-app/assets/images/documentation/google-example-textarea.png)
 
 And if you are interested in more details, toggle the `Details` widget (see 1st image):
-![](/home/sean/work/CorpusMinder/grails-app/assets/images/documentation/google-example1-details.png)
+![](/home/sean/work/CourageousSearch/grails-app/assets/images/documentation/google-example1-details.png)
 
 ## Results Comparison
 Interestingly, one of my early interests in Brave Search API was to compare two goggles side-by-side, e.g. [News from the LEFT](https://raw.githubusercontent.com/allsides-news/brave-goggles/main/left.goggles) vs [News from the Right](https://search.brave.com/goggles/profile?goggles_id=https%3A%2F%2Fraw.githubusercontent.com%2Fallsides-news%2Fbrave-goggles%2Fmain%2Fright.goggles)   
