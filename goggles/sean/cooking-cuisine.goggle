@@ -1,0 +1,188 @@
+! name: Cooking & Cuisine
+! description: General cooking and cuisine issues
+! public: true
+! author: Courageous Search - sean
+! avatar: #FF8C00
+! created: Wed, 07 Feb 2024 02:25:34 GMT
+
+
+! src: mine:(2)  other:(1)  nonCtx:(0)
+! doc: mine:(1)  other:(1)  nonCtx:(0)
+$boost=5,site=bonappetit.com
+
+! src: mine:(2)  other:(0)  nonCtx:(0)
+! doc: mine:(1)  other:(0)  nonCtx:(0)
+$boost=5,site=shop.momofuku.com
+
+! src: mine:(1)  other:(2)  nonCtx:(0)
+! doc: mine:(1)  other:(1)  nonCtx:(0)
+$boost=3,site=foodsguy.com
+
+! src: mine:(1)  other:(1)  nonCtx:(0)
+! doc: mine:(1)  other:(1)  nonCtx:(0)
+$boost=3,site=picturebookny.com
+
+! src: mine:(1)  other:(1)  nonCtx:(0)
+! doc: mine:(1)  other:(1)  nonCtx:(0)
+$boost=3,site=inspiredtaste.net
+
+! src: mine:(1)  other:(1)  nonCtx:(0)
+! doc: mine:(1)  other:(1)  nonCtx:(0)
+$boost=3,site=eazypeazymealz.com
+
+! src: mine:(1)  other:(0)  nonCtx:(0)
+! doc: mine:(1)  other:(2)  nonCtx:(0)
+$boost=3,site=foodandwine.com
+
+! src: mine:(1)  other:(0)  nonCtx:(0)
+! doc: mine:(1)  other:(1)  nonCtx:(0)
+$boost=3,site=thecookingworld.com
+
+! src: mine:(1)  other:(0)  nonCtx:(0)
+! doc: mine:(1)  other:(0)  nonCtx:(0)
+$boost=3,site=milkbarstore.com
+
+! src: mine:(1)  other:(0)  nonCtx:(0)
+! doc: mine:(1)  other:(0)  nonCtx:(0)
+$boost=3,site=houseandhome.com
+
+! src: mine:(1)  other:(0)  nonCtx:(0)
+! doc: mine:(1)  other:(0)  nonCtx:(0)
+$boost=3,site=micarestaurant.com
+
+! src: mine:(1)  other:(0)  nonCtx:(0)
+! doc: mine:(1)  other:(0)  nonCtx:(0)
+$boost=3,site=lacademie.com
+
+! src: mine:(1)  other:(0)  nonCtx:(0)
+! doc: mine:(1)  other:(0)  nonCtx:(0)
+$boost=3,site=rasamalaysia.com
+
+! src: mine:(1)  other:(0)  nonCtx:(0)
+! doc: mine:(1)  other:(0)  nonCtx:(0)
+$boost=3,site=tipbuzz.com
+
+! src: mine:(1)  other:(0)  nonCtx:(0)
+! doc: mine:(1)  other:(0)  nonCtx:(0)
+$boost=3,site=keeshaskitchen.com
+
+! src: mine:(1)  other:(1)  nonCtx:(0)
+! doc: mine:(0)  other:(1)  nonCtx:(0)
+$boost=2,site=eatyourbooks.com
+
+! src: mine:(1)  other:(0)  nonCtx:(0)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+$boost=2,site=thriftbooks.com
+
+! src: mine:(0)  other:(2)  nonCtx:(3)
+! doc: mine:(1)  other:(4)  nonCtx:(0)
+$boost=2,site=reddit.com
+
+! src: mine:(0)  other:(2)  nonCtx:(2)
+! doc: mine:(1)  other:(2)  nonCtx:(0)
+$boost=1,site=goodreads.com
+
+! src: mine:(0)  other:(2)  nonCtx:(2)
+! doc: mine:(1)  other:(1)  nonCtx:(0)
+$boost=1,site=barnesandnoble.com
+
+! src: mine:(0)  other:(1)  nonCtx:(1)
+! doc: mine:(1)  other:(1)  nonCtx:(0)
+$boost=1,site=hotsalty.com
+
+! src: mine:(0)  other:(1)  nonCtx:(1)
+! doc: mine:(1)  other:(1)  nonCtx:(0)
+$boost=1,site=ourtableforseven.com
+
+! src: mine:(0)  other:(1)  nonCtx:(1)
+! doc: mine:(1)  other:(1)  nonCtx:(0)
+$boost=1,site=penguinrandomhouse.com
+
+! src: mine:(0)  other:(1)  nonCtx:(1)
+! doc: mine:(1)  other:(1)  nonCtx:(0)
+$boost=1,site=healthyrecipesblogs.com
+
+! src: mine:(0)  other:(1)  nonCtx:(0)
+! doc: mine:(1)  other:(1)  nonCtx:(0)
+$boost=1,site=fedandfit.com
+
+! src: mine:(0)  other:(1)  nonCtx:(0)
+! doc: mine:(1)  other:(1)  nonCtx:(0)
+$boost=1,site=halfscratched.com
+
+! src: mine:(0)  other:(0)  nonCtx:(2)
+! doc: mine:(1)  other:(0)  nonCtx:(0)
+$boost=1,site=time.com
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(1)  other:(0)  nonCtx:(0)
+$boost=1,site=newyorker.com
+
+! src: mine:(0)  other:(2)  nonCtx:(0)
+! doc: mine:(0)  other:(1)  nonCtx:(0)
+$boost=1,site=indianhealthyrecipes.com
+
+! src: mine:(0)  other:(2)  nonCtx:(0)
+! doc: mine:(0)  other:(1)  nonCtx:(0)
+$boost=1,site=delish.com
+
+! src: mine:(0)  other:(0)  nonCtx:(0)
+! doc: mine:(1)  other:(0)  nonCtx:(0)
+$boost=1,site=thecarefreekitchen.com
+
+! src: mine:(0)  other:(0)  nonCtx:(0)
+! doc: mine:(1)  other:(0)  nonCtx:(0)
+$boost=1,site=valentinascorner.com
+
+! src: mine:(0)  other:(0)  nonCtx:(0)
+! doc: mine:(1)  other:(0)  nonCtx:(0)
+$boost=1,site=chickenvibes.com
+
+! src: mine:(0)  other:(1)  nonCtx:(1)
+! doc: mine:(0)  other:(1)  nonCtx:(1)
+! $boost=0,site=cafedelites.com
+
+! src: mine:(0)  other:(1)  nonCtx:(0)
+! doc: mine:(0)  other:(1)  nonCtx:(0)
+! $boost=0,site=recipetineats.com
+
+! src: mine:(0)  other:(1)  nonCtx:(0)
+! doc: mine:(0)  other:(1)  nonCtx:(0)
+! $boost=0,site=twosleevers.com
+
+! src: mine:(0)  other:(-1)  nonCtx:(-1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+! $boost=0,site=youtube.com
+
+! src: mine:(0)  other:(1)  nonCtx:(0)
+! doc: mine:(0)  other:(1)  nonCtx:(0)
+! $boost=0,site=wellplated.com
+
+! src: mine:(0)  other:(1)  nonCtx:(0)
+! doc: mine:(0)  other:(1)  nonCtx:(0)
+! $boost=0,site=littlespicejar.com
+
+! src: mine:(0)  other:(0)  nonCtx:(-1)
+! doc: mine:(0)  other:(1)  nonCtx:(0)
+! $boost=0,site=nypost.com
+
+! src: mine:(0)  other:(0)  nonCtx:(2)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+! $boost=0,site=jacksonville.com
+
+! src: mine:(0)  other:(0)  nonCtx:(-1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+! $boost=0,site=quora.com
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+! $boost=0,site=tripadvisor.com
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+! $boost=0,site=opentable.com
+
+! src: mine:(0)  other:(0)  nonCtx:(1)
+! doc: mine:(0)  other:(0)  nonCtx:(0)
+! $boost=0,site=visitjacksonville.com
+
