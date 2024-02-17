@@ -26,7 +26,10 @@
 - Control sites/sources
   - boost and bury or hide/block various sites 
     - rely on crowdsourcing to start...
-    - customize your preferences if/when necessary (e.g. [Brave Goggles](https://github.com/brave/goggles-quickstart/blob/main/README.md)) 
+    - customize your preferences if/when necessary 
+      - [Brave Goggles](https://github.com/brave/goggles-quickstart/blob/main/README.md) - very cool [functionality](https://support.brave.com/hc/en-us/articles/6959189556237-How-do-I-use-Goggles) from the folks at Brave _(currently [beta](https://www.reddit.com/r/brave_browser/comments/viai3r/goggles_beta_is_now_available_in_brave_search/))_  
+        - [discover](https://search.brave.com/goggles/discover) goggles at Brave
+        - [growing list](goggles) in this repo...
 - Add enhanced **result** analysis & filtering
   - add custom/personalized boosting
   - filter/boost sites, authors, documents, content
@@ -52,10 +55,12 @@
 - CS has several analysis "agents" built-in
   - _coming soon..._
   - e.g.: 
-    - detect author/publisher,
+    - detect code snippet language(s) _(i.e. only Scala, not python examples)_
+    - detect software versions _(e.g. JDK 11+, Excel 2010+, Autocad2018+,...)_
+    - detect author/publisher
     - detect content date
-    - apply machine learning (SparkNLP) pipelines to result document, augmenting stored results/content
-    - auto-tag result docs
+    - apply machine learning pipelines to result document, augmenting stored results/content _(e.g. SparkNLP)_ 
+    - auto-tag result docs _(e.g. import Firefox bookmarks with tags, CS will use ML to predict tags on new content)_
     - ...
 - Create/use bespoke analysis agents as desired
   - users can create private or shared custom analysis agents
