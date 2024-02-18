@@ -108,21 +108,22 @@ Curious? Skeptical? Hopeful?
 ## Getting Started
 - Request a hosted account via [project issue](https://github.com/seanoc5/courageoussearch/labels/account)
   - note hosted accounts are currently (Feb 2024) very limited
-  - more available hosted accounts will be coming in the near/medium future _(driven by demand/interest)_
-
-or 
-
+  - more available hosted accounts will be coming in the near/medium future _(driven by demand/interest)_  
+or  
 - Go to [README.Deployment.md](README.Deployment.md) and host your own search
+  - Note: the repo is currently several months out of date. Read below...
 
 
 ## More information
 
 ### other & misc
-See Readme.Developer.md if you have interest in the code, grails, etc
-  
+See [Readme.Developer.md](Readme.Developer.md) if you have interest in the code, grails, etc
+
+Note: the **repo is currently several months out of date**. Sorry :-/  
+Raise a project issue voting for me to spend a day syncing the base of the current CorpusMinder project back to CourageousSearch if you are interested in deploying your own version.    
   
 
 
 ##### footnotes etc.
 
-[h] _(us, people, or as some future SkyNet might call us: Meat Puppets)_ 
+[h] Humans: _(us, people, or as some future SkyNet might call us: Meat Puppets)_ 
