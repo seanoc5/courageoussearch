@@ -1,5 +1,11 @@
 # Overview of CourageousSearch (CS)
-### Own Your Own Search!
+CourageousSearch is an opensource project intended to empower Power Users and beyond.  
+The goal is to augment the current rush to Machine Learning and LLM.  
+**More importantly** however: it bravely posits that technology should empower people rather than attempting to replace personal thought and analysis.  
+Indeed CourageousSearch celebrates and promotes that marvelous **grey matter between our ears**. 
+
+
+##  ¡Own Your Own Search!
 - **What** you search: Search Engines
 - **How** you search: Boosting/Filtering, tweaking
 - **Why** you search: Contexts/Intents
@@ -7,6 +13,24 @@
 - **Analyze** Results: Shared & Customizable Analysis
 - **Collaborate**: Share as much as you like
  
+### Why be Courageous in Search?
+Courageous Search--_when done properly_--takes more **initial** effort than just hitting one of the mega-corp search engines.
+
+So why bother?
+
+In short: because humans _(us, people, or as the coming [singularity](https://en.wikipedia.org/wiki/Technological_singularity) will likely call us: Meat Puppets)_ are still better, faster, and smarter than the machines. At least for the next few years.   
+AND: after an initial '_getting started_' investment of time, effort, and thinking, the **search and discovery process** will be significantly more rewarding and less taxing.  
+
+There are those of us who are adventurous, brave, and courageous in our own intellectually capacity.  
+This project is specifically focused on the courageous folks who want to **leverage technology** rather than _bow to it_.
+
+**¡Own your Own Search!**
+
+Take the Power back from the mega-corps and tech-bros.  
+Take ownership of your discovery process and more.  
+Make tech work for you, rather than you being the raw material feeding the big black boxes.
+
+Curious? Skeptical? Doubtful?  Read on!
 
 ## What you search
   - Brave Search [API](https://brave.com/search/api/)
